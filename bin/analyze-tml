@@ -1,0 +1,39 @@
+#!/usr/bin/perl
+use strict;
+use warnings;
+use 5.010;
+use FindBin '$Bin';
+use File::Basename qw/ basename /;
+use autodie qw/ open close opendir closedir /;
+use lib "$Bin/lib";
+use tags qw/ tml_files get_tags get_index /;
+
+my $index = "$Bin/../doc/tag-usage.md";
+my %index = get_index($index);
+
+
+my @tml = tml_files("$Bin/../test");
+for my $tml (@tml) {
+    my $basename = basename $tml;
+    my @events = get_events($tml);
+    analyse_events(@events);
+}
+
+sub analyse_events {
+    my (@events) = @_;
+}
+
+sub get_events {
+    my ($file) = @_;
+    open my $fh, '<', $file;
+    my @tags;
+    while (<$fh>) {
+        if (my $x = m/^\+\+\+ test-event/ ... (/^\+\+\+/ or eof)) {
+            chomp;
+            next if $x == 1;
+            say "($x) $_";
+        }
+    }
+    return @tags;
+}
+
