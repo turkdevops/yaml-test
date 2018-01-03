@@ -25,7 +25,7 @@ close $fh;
 my $out_tml;
 if ($tml =~ m/\A(.*?^\+\+\+ \Q$section_name\E\n)(.*?)((?:^\+\+\+ |\z).*)\z/ms) {
     my ($pre, $section, $post) = ($1, $2, $3);
-    $out_tml = $pre . $replace . $post;
+    $out_tml = $pre . $replace . "\n" . $post;
 }
 else {
     die "Could not find section $section_name in $file";
