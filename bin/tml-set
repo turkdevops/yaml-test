@@ -1,0 +1,36 @@
+#!/usr/bin/env perl
+use strict;
+use warnings;
+use 5.010;
+
+my ($file, $section_name) = @ARGV;
+
+unless (-f $file) {
+    die "'$file' does not exist";
+}
+
+unless ($section_name) {
+    die "Usage: $0 <file> <tml-section_name>";
+}
+
+my $replace;
+while (my $line = <STDIN>) {
+    $replace .= $line;
+}
+
+open my $fh, "<", $file or die $!;
+my $tml = do { local $/; <$fh> };
+close $fh;
+
+my $out_tml;
+if ($tml =~ m/\A(.*?^\+\+\+ \Q$section_name\E\n)(.*?)((?:^\+\+\+ |\z).*)\z/ms) {
+    my ($pre, $section, $post) = ($1, $2, $3);
+    $out_tml = $pre . $replace . $post;
+}
+else {
+    die "Could not find section $section_name in $file";
+}
+
+open $fh, ">", $file or die $!;
+print $fh $out_tml;
+close $fh;
