@@ -51,7 +51,7 @@ yaml-test-suite:
 	git worktree add -f $@ master
 
 testml:
-	git clone --depth=1 --branch=eval git@github.com:testml-lang/testml
+	git clone --depth=1 git@github.com:testml-lang/testml
 
 YAML-PP-p5:
 	git clone --depth=1 git@github.com:perlpunk/YAML-PP-p5
