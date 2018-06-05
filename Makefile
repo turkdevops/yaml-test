@@ -42,7 +42,7 @@ test-yamlpp-2: $(DEPS)
 	    yaml-test-suite/test/2*.tml
 
 clean:
-	rm -fr $(DEPS)
+	rm -fr $(DEPS) .testml/
 
 
 
