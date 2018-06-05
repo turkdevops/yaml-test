@@ -3,7 +3,7 @@
 Diff = True
 
 *in-yaml.yaml-load.ToJSON == FromJSON(*in-json).ToJSON
-  :"YAML load matches JSON load - +"
+  :"{File} - YAML load matches JSON load - +"
 
 *in-yaml.to-events == *test-event
-  :"YAML parses to expected event stream - +"
+  :"{File} - YAML parses to expected event stream - +"
