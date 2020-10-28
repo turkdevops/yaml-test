@@ -4,7 +4,7 @@ require './prelude'
 require './data'
 csv = require 'papaparse'
 
-files = process.argv[2..]
+files = process.argv[2..].sort()
 
 rows = []
 
