@@ -1,5 +1,5 @@
 id,label,in-yaml,test-event,in-json,out-yaml,emit-yaml,error,scalar,mapping,sequence,flow,single,double,literal,folded,empty,empty-key,explicit-key,complex-key,duplicate-key,alias,anchor,tag,local-tag,unknown-tag,footer,header,directive,document,comment,whitespace,indent,simple,edge,spec,jayt,upto-1.2,1.3-err,1.3-mod,libyaml-err
-229Q,Spec Example 2.4. Sequence of Mappings,"-
+"229Q ",Spec Example 2.4. Sequence of Mappings,"-
   name: Mark McGwire
   hr:   65
   avg:  0.278
@@ -48,7 +48,7 @@ id,label,in-yaml,test-event,in-json,out-yaml,emit-yaml,error,scalar,mapping,sequ
   hr: 63
   avg: 0.288
 ",,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-236B,Invalid value after mapping,"foo:
+"236B ",Invalid value after mapping,"foo:
   bar
 invalid
 ","+STR
@@ -57,7 +57,7 @@ invalid
 =VAL :foo
 =VAL :bar
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-26DV,Whitespace around colon in mappings,"""top1"" :<SPC>
+"26DV ",Whitespace around colon in mappings,"""top1"" :<SPC>
   ""key1"" : &alias1 scalar1
 'top2' :<SPC>
   'key2' : &alias2 scalar2
@@ -132,7 +132,7 @@ top5: scalar5
 top6:
   &anchor6 'key6': scalar6
 ",,,,√,,,,,,,,,,,,√,,,,,,,,,,√,,,,,,,,,
-27NA,Spec Example 5.9. Directive Indicator,"%YAML 1.2
+"27NA ",Spec Example 5.9. Directive Indicator,"%YAML 1.2
 --- text
 ","+STR
 +DOC ---
@@ -142,7 +142,7 @@ top6:
 ","""text""
 ","--- text
 ",,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,√,,,√,,
-2AUY,Tags in Block Sequence," - !!str a
+"2AUY ",Tags in Block Sequence," - !!str a
  - b
  - !!int 42
  - d
@@ -167,13 +167,13 @@ top6:
 - !!int 42
 - d
 ",,,,,√,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,
-2CMS,Invalid mapping in plain multiline,"this
+"2CMS ",Invalid mapping in plain multiline,"this
  is
   invalid: x
 ","+STR
 +DOC
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2EBW,Allowed characters in keys,"a!""#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~: safe
+"2EBW ",Allowed characters in keys,"a!""#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~: safe
 ?foo: safe question mark
 :foo: safe colon
 -foo: safe dash
@@ -207,7 +207,7 @@ this is#not: a comment
 -foo: safe dash
 this is#not: a comment
 ",,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-2JQS,Block Mapping with Missing Keys,": a
+"2JQS ",Block Mapping with Missing Keys,": a
 : b
 ","+STR
 +DOC
@@ -220,7 +220,7 @@ this is#not: a comment
 -DOC
 -STR
 ",,,,,,√,,,,,,,,√,,,√,,,,,,,,,,,,,,,,,,,,
-2LFX,Spec Example 6.13. Reserved Directives [1.3],"%FOO  bar baz # Should be ignored
+"2LFX ",Spec Example 6.13. Reserved Directives [1.3],"%FOO  bar baz # Should be ignored
               # with a warning.
 ---
 ""foo""
@@ -234,7 +234,7 @@ this is#not: a comment
 ""foo""
 ","--- ""foo""
 ",,,,,,,√,,,,,,,,,,,,,,√,√,,,,,,,√,,,,√,
-2SXE,Anchors With Colon in Name,"&a: key: &a value
+"2SXE ",Anchors With Colon in Name,"&a: key: &a value
 foo:
   *a:
 ","+STR
@@ -254,7 +254,7 @@ foo:
 ","&a: key: &a value
 foo: *a:
 ",,,,√,,,,,,,,,,,,√,,,,,,,,,,,,,√,,,,√,,
-2XXW,Spec Example 2.25. Unordered Sets,"# Sets are represented as a
+"2XXW ",Spec Example 2.25. Unordered Sets,"# Sets are represented as a
 # Mapping where each key is
 # associated with a null value
 --- !!set
@@ -283,7 +283,7 @@ Mark McGwire:
 Sammy Sosa:
 Ken Griff:
 ",,,,√,,,,,,,,,√,,,,,,,√,,,,,,,,,,√,,,,,
-33X3,Three explicit integers in a block sequence,"---
+"33X3 ",Three explicit integers in a block sequence,"---
 - !!int 1
 - !!int -2
 - !!int 33
@@ -306,7 +306,7 @@ Ken Griff:
 - !!int -2
 - !!int 33
 ",,,,,√,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,
-35KP,Tags for Root Objects,"--- !!map
+"35KP ",Tags for Root Objects,"--- !!map
 ? a
 : b
 --- !!seq
@@ -343,7 +343,7 @@ a: b
 - !!str c
 --- !!str d e
 ",,,,√,,,,,,,,,√,,,,,√,,,,√,,,,,,,,,,,,,
-36F6,Multiline plain scalar with empty line,"---
+"36F6 ",Multiline plain scalar with empty line,"---
 plain: a
  b
 
@@ -364,7 +364,7 @@ plain: 'a b
 
   c'
 ",,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-3ALJ,Block Sequence in Block Sequence,"- - s1_i1
+"3ALJ ",Block Sequence in Block Sequence,"- - s1_i1
   - s1_i2
 - s2
 ","+STR
@@ -386,7 +386,7 @@ plain: 'a b
   ""s2""
 ]
 ",,,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-3GZX,Spec Example 7.1. Alias Nodes,"First occurrence: &anchor Foo
+"3GZX ",Spec Example 7.1. Alias Nodes,"First occurrence: &anchor Foo
 Second occurrence: *anchor
 Override anchor: &anchor Bar
 Reuse anchor: *anchor
@@ -411,7 +411,7 @@ Reuse anchor: *anchor
   ""Reuse anchor"": ""Bar""
 }
 ",,,,,√,,,,,,,,,,,,√,,,,,,,,,,,,,,√,,,,,
-3HFZ,Invalid content after document end marker,"---
+"3HFZ ",Invalid content after document end marker,"---
 key: value
 ... invalid
 ","+STR
@@ -422,7 +422,7 @@ key: value
 -MAP
 -DOC ...
 ",,,,√,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,
-3MYT,"Plain Scalar looking like key, comment, anchor and tag","---
+"3MYT ","Plain Scalar looking like key, comment, anchor and tag","---
 k:#foo
  &a !t s
 ","+STR
@@ -433,7 +433,7 @@ k:#foo
 ","""k:#foo &a !t s""
 ","--- k:#foo &a !t s
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-3R3P,Single block sequence with anchor,"&sequence
+"3R3P ",Single block sequence with anchor,"&sequence
 - a
 ","+STR
 +DOC
@@ -448,7 +448,7 @@ k:#foo
 ","&sequence
 - a
 ",,,,,√,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,,
-3UYS,Escaped slash in double quotes,"escaped slash: ""a\/b""
+"3UYS ",Escaped slash in double quotes,"escaped slash: ""a\/b""
 ","+STR
 +DOC
 +MAP
@@ -462,7 +462,7 @@ k:#foo
 }
 ","escaped slash: ""a/b""
 ",,,,,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,
-4ABK,Flow Mapping Separate Values,"{
+"4ABK ",Flow Mapping Separate Values,"{
 unquoted : ""separate"",
 http://foo.com,
 omitted value:,
@@ -483,7 +483,7 @@ omitted value:,
 http://foo.com: null
 omitted value: null
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-4CQQ,Spec Example 2.18. Multi-line Flow Scalars,"plain:
+"4CQQ ",Spec Example 2.18. Multi-line Flow Scalars,"plain:
   This unquoted scalar
   spans many lines.
 
@@ -506,7 +506,7 @@ quoted: ""So does this
 ","plain: This unquoted scalar spans many lines.
 quoted: ""So does this quoted scalar.\n""
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-4EJS,Invalid tabs as indendation in a mapping,"---
+"4EJS ",Invalid tabs as indendation in a mapping,"---
 a:
 <TAB>b:
 <TAB><TAB>c: value
@@ -515,7 +515,7 @@ a:
 +MAP
 =VAL :a
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,
-4FJ6,Nested implicit complex keys,"---
+"4FJ6 ",Nested implicit complex keys,"---
 [
   [ a, [ [[b,c]]: d, e]]: 23
 ]
@@ -551,7 +551,7 @@ a:
       - e
   : 23
 ",,,,√,√,√,,,,,,,,√,,,,,,,,,,,,,,,,,,,,,
-4GC6,Spec Example 7.7. Single Quoted Characters,"'here''s to ""quotes""'
+"4GC6 ",Spec Example 7.7. Single Quoted Characters,"'here''s to ""quotes""'
 ","+STR
 +DOC
 =VAL 'here's to ""quotes""
@@ -559,7 +559,7 @@ a:
 -STR
 ","""here's to \""quotes\""""
 ",,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,√,,,√,,
-4H7K,Flow sequence with invalid extra closing bracket,"---
+"4H7K ",Flow sequence with invalid extra closing bracket,"---
 [ a, b, c ] ]
 ","+STR
 +DOC ---
@@ -570,7 +570,7 @@ a:
 -SEQ
 -DOC
 ",,,,√,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-4HVU,Wrong indendation in Sequence,"key:
+"4HVU ",Wrong indendation in Sequence,"key:
    - ok
    - also ok
   - wrong
@@ -583,7 +583,7 @@ a:
 =VAL :also ok
 -SEQ
 ",,,,√,,,√,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,
-4JVG,Scalar value with two anchors,"top1: &node1
+"4JVG ",Scalar value with two anchors,"top1: &node1
   &k1 key1: val1
 top2: &node2
   &v2 val2
@@ -597,7 +597,7 @@ top2: &node2
 -MAP
 =VAL :top2
 ",,,,√,,√,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,,
-4MUZ,Flow mapping colon on line after key,"{""foo""
+"4MUZ ",Flow mapping colon on line after key,"{""foo""
 : ""bar""}
 ","+STR
 +DOC
@@ -612,7 +612,7 @@ top2: &node2
 }
 ",,"""foo"": ""bar""
 ",,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-4Q9F,Folded Block Scalar [1.3],"--- >
+"4Q9F ",Folded Block Scalar [1.3],"--- >
  ab
  cd
 <SPC>
@@ -634,7 +634,7 @@ top2: &node2
 
   gh
 ",,,√,,,,,,,√,,,,,,,,,,,,,,,,√,,,,,,,,√,
-4QFQ,Spec Example 8.2. Block Indentation Indicator [1.3],"- |
+"4QFQ ",Spec Example 8.2. Block Indentation Indicator [1.3],"- |
  detected
 - >
 <SPC>
@@ -671,7 +671,7 @@ top2: &node2
 - >
   detected
 ",,√,,,,,,√,√,,,,,,,,,,,,,,,,√,,,,√,,,,√,√
-4UYU,Colon in Double Quoted String,"""foo: bar\"": baz""
+"4UYU ",Colon in Double Quoted String,"""foo: bar\"": baz""
 ","+STR
 +DOC
 =VAL ""foo: bar"": baz
@@ -679,7 +679,7 @@ top2: &node2
 -STR
 ","""foo: bar\"": baz""
 ",,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,√,,
-4V8U,Plain scalar with backslashes,"---
+"4V8U ",Plain scalar with backslashes,"---
 plain\value\with\backslashes
 ","+STR
 +DOC ---
@@ -689,7 +689,7 @@ plain\value\with\backslashes
 ","""plain\\value\\with\\backslashes""
 ","--- plain\value\with\backslashes
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-4ZYM,Spec Example 6.4. Line Prefixes,"plain: text
+"4ZYM ",Spec Example 6.4. Line Prefixes,"plain: text
   lines
 quoted: ""text
   <TAB>lines""
@@ -722,7 +722,7 @@ block: |
   text
    <TAB>lines
 ",,√,,,,,√,√,,,,,,,,,,,,,,,,,√,,,,√,,√,,,
-52DL,Explicit Non-Specific Tag [1.3],"---
+"52DL ",Explicit Non-Specific Tag [1.3],"---
 ! a
 ","+STR
 +DOC ---
@@ -732,7 +732,7 @@ block: |
 ","""a""
 ","--- ! a
 ",,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,√,
-54T7,Flow Mapping,"{foo: you, bar: far}
+"54T7 ",Flow Mapping,"{foo: you, bar: far}
 ","+STR
 +DOC
 +MAP
@@ -750,12 +750,12 @@ block: |
 ","foo: you
 bar: far
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-55WF,Invalid escape in double quoted string,"---
+"55WF ",Invalid escape in double quoted string,"---
 ""\.""
 ","+STR
 +DOC ---
 ",,,,√,,,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,
-565N,Construct Binary,"canonical: !!binary ""\
+"565N ",Construct Binary,"canonical: !!binary ""\
  R0lGODlhDAAMAIQAAP//9/X17unp5WZmZgAAAOfn515eXvPz7Y6OjuDg4J+fn5\
  OTk6enp56enmlpaWNjY6Ojo4SEhP/++f/++f/++f/++f/++f/++f/++f/++f/+\
  +f/++f/++f/++f/++f/++SH+Dk1hZGUgd2l0aCBHSU1QACwAAAAADAAMAAAFLC\
@@ -785,7 +785,7 @@ description:
   ""description"": ""The binary value above is a tiny arrow encoded as a gif image.""
 }
 ",,,,,,,,,,,,,,,,,,,√,,√,,,,,,,,,,,√,,,,
-57H4,Spec Example 8.22. Block Collection Nodes,"sequence: !!seq
+"57H4 ",Spec Example 8.22. Block Collection Nodes,"sequence: !!seq
 - entry
 - !!seq
  - nested
@@ -827,7 +827,7 @@ mapping: !!map
 mapping: !!map
   foo: bar
 ",,,,√,√,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,
-5BVJ,Spec Example 5.7. Block Scalar Indicators,"literal: |
+"5BVJ ",Spec Example 5.7. Block Scalar Indicators,"literal: |
   some
   text
 folded: >
@@ -853,7 +853,7 @@ folded: >
 folded: >
   some text
 ",,,√,,,,,,√,√,,,,,,,,,,,,,,,,,,,,√,,,,,
-5C5M,Spec Example 7.15. Flow Mappings,"- { one : two , three: four , }
+"5C5M ",Spec Example 7.15. Flow Mappings,"- { one : two , three: four , }
 - {five: six,seven : eight}
 ","+STR
 +DOC
@@ -888,7 +888,7 @@ folded: >
 - five: six
   seven: eight
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-5GBF,Spec Example 6.5. Empty Lines,"Folding:
+"5GBF ",Spec Example 6.5. Empty Lines,"Folding:
   ""Empty line
    <TAB>
   as a line feed""
@@ -914,7 +914,7 @@ Chomping: |
 Chomping: |
   Clipped empty lines
 ",,,√,,,,,√,√,,,,,,,,,,,,,,,,,√,,,,√,,√,,,
-5KJE,Spec Example 7.13. Flow Sequence,"- [ one, two, ]
+"5KJE ",Spec Example 7.13. Flow Sequence,"- [ one, two, ]
 - [three ,four]
 ","+STR
 +DOC
@@ -945,7 +945,7 @@ Chomping: |
 - - three
   - four
 ",,,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-5LLU,Block scalar with wrong indented line after spaces only,"block scalar: >
+"5LLU ",Block scalar with wrong indented line after spaces only,"block scalar: >
 <SPC>
 <SPC><SPC>
 <SPC><SPC><SPC>
@@ -955,7 +955,7 @@ Chomping: |
 +MAP
 =VAL :block scalar
 ",,,,√,,,,,,,,√,,,,,,,,,,,,,,,,√,,,,,,,,,
-5MUD,Colon and adjacent value on next line,"---
+"5MUD ",Colon and adjacent value on next line,"---
 { ""foo""
   :bar }
 ","+STR
@@ -972,7 +972,7 @@ Chomping: |
 ","---
 ""foo"": bar
 ",,,,√,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,
-5NYZ,Spec Example 6.9. Separated Comment,"key:    # Comment
+"5NYZ ",Spec Example 6.9. Separated Comment,"key:    # Comment
   value
 ","+STR
 +DOC
@@ -987,7 +987,7 @@ Chomping: |
 }
 ","key: value
 ",,,,√,,,,,,,,,,,,,,,,,,,,,√,,,,,√,,,,,
-5T43,Colon at the beginning of adjacent flow scalar,"- { ""key"":value }
+"5T43 ",Colon at the beginning of adjacent flow scalar,"- { ""key"":value }
 - { ""key""::value }
 ","+STR
 +DOC
@@ -1016,14 +1016,14 @@ Chomping: |
 ","- ""key"": value
 - ""key"": :value
 ",,√,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-5TRB,Invalid document-start marker in doublequoted tring,"---
+"5TRB ",Invalid document-start marker in doublequoted tring,"---
 ""
 ---
 ""
 ","+STR
 +DOC ---
 ",,,,√,,,,,,√,,,,,,,,,,,,,,√,,,,,,,,,,,,,
-5TYM,Spec Example 6.21. Local Tag Prefix,"%TAG !m! !my-
+"5TYM ",Spec Example 6.21. Local Tag Prefix,"%TAG !m! !my-
 --- # Bulb here
 !m!light fluorescent
 ...
@@ -1041,14 +1041,14 @@ Chomping: |
 ","""fluorescent""
 ""green""
 ",,,,,,,,,,,,,,,,,,,√,√,,,,√,,,,,,,√,,,,,
-5U3A,Sequence on same Line as Mapping Key,"key: - a
+"5U3A ",Sequence on same Line as Mapping Key,"key: - a
      - b
 ","+STR
 +DOC
 +MAP
 =VAL :key
 ",,,,√,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-5WE3,Spec Example 8.17. Explicit Block Mapping Entries,"? explicit key # Empty value
+"5WE3 ",Spec Example 8.17. Explicit Block Mapping Entries,"? explicit key # Empty value
 ? |
   block key
 : - one # Explicit compact
@@ -1079,7 +1079,7 @@ Chomping: |
 : - one
   - two
 ",,,,√,√,,,,√,,,,√,,,,,,,,,,,,√,,,,,√,,,,,
-62EZ,Invalid block mapping key on same line as previous key,"---
+"62EZ ",Invalid block mapping key on same line as previous key,"---
 x: { y: z }in: valid
 ","+STR
 +DOC ---
@@ -1090,7 +1090,7 @@ x: { y: z }in: valid
 =VAL :z
 -MAP
 ",,,,√,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-65WH,Single Entry Block Sequence,"- foo
+"65WH ",Single Entry Block Sequence,"- foo
 ","+STR
 +DOC
 +SEQ
@@ -1102,7 +1102,7 @@ x: { y: z }in: valid
   ""foo""
 ]
 ",,,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-6BCT,Spec Example 6.3. Separation Spaces,"- foo:<TAB> bar
+"6BCT ",Spec Example 6.3. Separation Spaces,"- foo:<TAB> bar
 - - baz
   -<TAB>baz
 ","+STR
@@ -1132,7 +1132,7 @@ x: { y: z }in: valid
 - - baz
   - baz
 ",,,,,√,,,,,,,,,,,,,,,,,,,,,√,,,,√,,√,,,√
-6BFJ,"Mapping, key and flow sequence item anchors","---
+"6BFJ ","Mapping, key and flow sequence item anchors","---
 &mapping
 &key [ &item a, b, c ]: value
 ","+STR
@@ -1154,7 +1154,7 @@ x: { y: z }in: valid
 - c
 : value
 ",,,,√,√,√,,,,,,,,√,,,√,,,,,,,,,,,,,,,,,,
-6CK3,Spec Example 6.26. Tag Shorthands,"%TAG !e! tag:example.com,2000:app/
+"6CK3 ",Spec Example 6.26. Tag Shorthands,"%TAG !e! tag:example.com,2000:app/
 ---
 - !local foo
 - !!str bar
@@ -1174,7 +1174,7 @@ x: { y: z }in: valid
   ""baz""
 ]
 ",,,,,,,,,,,,,,,,,,,√,√,,,,,,,,,,,√,,,,,
-6FWR,Block Scalar Keep,"--- |+
+"6FWR ",Block Scalar Keep,"--- |+
  ab
 <SPC>
 <SPC><SPC>
@@ -1193,7 +1193,7 @@ x: { y: z }in: valid
 <SPC><SPC><SPC>
 ...
 ",,√,,,,,,√,,,,,,,,,,,,,,,,,√,,,,,,,,,
-6H3V,Backslashes in singlequotes,"'foo: bar\': baz'
+"6H3V ",Backslashes in singlequotes,"'foo: bar\': baz'
 ","+STR
 +DOC
 +MAP
@@ -1207,7 +1207,7 @@ x: { y: z }in: valid
 }
 ","'foo: bar\': baz'
 ",,,√,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-6HB6,Spec Example 6.1. Indentation Spaces,"  # Leading comment line spaces are
+"6HB6 ",Spec Example 6.1. Indentation Spaces,"  # Leading comment line spaces are
    # neither content nor indentation.
 <SPC><SPC><SPC><SPC>
 Not indented:
@@ -1255,7 +1255,7 @@ Not indented:
   - Also by two
   - Still by two
 ",,,,,,√,,,,,,,,,,,,,,,,,,,√,√,√,,,√,,√,,,
-6JQW,"Spec Example 2.13. In literals, newlines are preserved","# ASCII Art
+"6JQW ","Spec Example 2.13. In literals, newlines are preserved","# ASCII Art
 --- |
   \//||\/||
   // ||  ||__
@@ -1269,7 +1269,7 @@ Not indented:
   \//||\/||
   // ||  ||__
 ",,,√,,,,,,√,,,,,,,,,,,,,,,,√,,,,,√,,,,,
-6JTT,Flow sequence without closing bracket,"---
+"6JTT ",Flow sequence without closing bracket,"---
 [ [ a, b, c ]
 ","+STR
 +DOC ---
@@ -1280,7 +1280,7 @@ Not indented:
 =VAL :c
 -SEQ
 ",,,,√,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-6JWB,Tags for Block Objects,"foo: !!seq
+"6JWB ",Tags for Block Objects,"foo: !!seq
   - !!str a
   - !!map
     key: !!str value
@@ -1311,7 +1311,7 @@ Not indented:
 - !!map
   key: !!str value
 ",,,,√,√,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,
-6KGN,Anchor for empty node,"---
+"6KGN ",Anchor for empty node,"---
 a: &anchor
 b: *anchor
 ","+STR
@@ -1332,7 +1332,7 @@ b: *anchor
 a: &anchor
 b: *anchor
 ",,,,,,,,,,,,,,,,√,√,,,,,,,,,,,,,,,,,,
-6LVF,Spec Example 6.13. Reserved Directives,"%FOO  bar baz # Should be ignored
+"6LVF ",Spec Example 6.13. Reserved Directives,"%FOO  bar baz # Should be ignored
               # with a warning.
 --- ""foo""
 ","+STR
@@ -1343,7 +1343,7 @@ b: *anchor
 ","""foo""
 ","--- ""foo""
 ",,,,,,,,√,,,,,,,,,,,,,,√,√,,,,,,,√,,,√,,
-6M2F,Aliases in Explicit Block Mapping,"? &a a
+"6M2F ",Aliases in Explicit Block Mapping,"? &a a
 : &b b
 : *a
 ","+STR
@@ -1359,7 +1359,7 @@ b: *anchor
 ",,"&a a: &b b
 : *a
 ",,,,,,,,,,,,√,√,,,√,,,,,,,,,,,,,,,,,,,
-6PBE,Zero-indented sequences in explicit mapping keys,"---
+"6PBE ",Zero-indented sequences in explicit mapping keys,"---
 ?
 - a
 - b
@@ -1386,7 +1386,7 @@ b: *anchor
 : - c
   - d
 ",,,√,√,,,,,,,,√,,,,,,,,,,,,,,,,,,,,,,
-6S55,Invalid scalar at the end of sequence,"key:
+"6S55 ",Invalid scalar at the end of sequence,"key:
  - bar
  - baz
  invalid
@@ -1398,7 +1398,7 @@ b: *anchor
 =VAL :bar
 =VAL :baz
 ",,,,√,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-6SLA,Allowed characters in quoted mapping key,"""foo\nbar:baz\tx \\$%^&*()x"": 23
+"6SLA ",Allowed characters in quoted mapping key,"""foo\nbar:baz\tx \\$%^&*()x"": 23
 'x\ny:z\tx $%^&*()x': 24
 ","+STR
 +DOC
@@ -1418,7 +1418,7 @@ b: *anchor
 : 23
 'x\ny:z\tx $%^&*()x': 24
 ",,,,√,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,
-6VJK,"Spec Example 2.15. Folded newlines are preserved for ""more indented"" and blank lines",">
+"6VJK ","Spec Example 2.15. Folded newlines are preserved for ""more indented"" and blank lines",">
  Sammy Sosa completed another
  fine season with great stats.
 
@@ -1440,7 +1440,7 @@ b: *anchor
 
   What a year!
 ",,,√,,,,,,,√,,,,,,,,,,,,,,,,,,,,√,,,√,,
-6WLZ,Spec Example 6.18. Primary Tag Handle [1.3],"# Private
+"6WLZ ",Spec Example 6.18. Primary Tag Handle [1.3],"# Private
 ---
 !foo ""bar""
 ...
@@ -1467,7 +1467,7 @@ b: *anchor
 ...
 --- !<tag:example.com,2000:app/foo> ""bar""
 ",,,,,,,,,,,,,,,,,√,√,,,,√,,,,,,,√,,,,√,
-6WPF,Spec Example 6.8. Flow Folding [1.3],"---
+"6WPF ",Spec Example 6.8. Flow Folding [1.3],"---
 ""
   foo<SPC>
 <SPC>
@@ -1484,7 +1484,7 @@ b: *anchor
 ",""" foo\nbar\nbaz ""
 ","--- "" foo\nbar\nbaz ""
 ",,√,,,,,√,,,,,,,,,,,,,,,,,,√,,,,√,,,,√,
-6XDY,Two document start markers,"---
+"6XDY ",Two document start markers,"---
 ---
 ","+STR
 +DOC ---
@@ -1499,7 +1499,7 @@ null
 ","---
 ---
 ",,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,
-6ZKB,Spec Example 9.6. Stream,"Document
+"6ZKB ",Spec Example 9.6. Stream,"Document
 ---
 # Empty
 ...
@@ -1532,7 +1532,7 @@ null
 ---
 matches %: 20
 ",,,,,,,,,,,,,,,,,,,,,√,,,,,,,,√,,,√,,
-735Y,Spec Example 8.20. Block Node Types,"-
+"735Y ",Spec Example 8.20. Block Node Types,"-
   ""flow in block""
 - >
  Block scalar
@@ -1563,7 +1563,7 @@ matches %: 20
 - !!map
   foo: bar
 ",,,,,,,,√,,√,,,,,,,,√,,,,,,,√,,,,,√,,,,,
-74H7,Tags in Implicit Mapping,"!!str a: b
+"74H7 ",Tags in Implicit Mapping,"!!str a: b
 c: !!int 42
 e: !!str f
 g: h
@@ -1597,7 +1597,7 @@ e: !!str f
 g: h
 !!str 23: !!bool false
 ",,,,√,,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,
-753E,Block Scalar Strip [1.3],"--- |-
+"753E ",Block Scalar Strip [1.3],"--- |-
  ab
 <SPC>
 <SPC>
@@ -1612,7 +1612,7 @@ g: h
   ab
 ...
 ",,,√,,,,,,√,,,,,,,,,,,,,,,,,√,,,,,,,,√,
-7A4E,Spec Example 7.6. Double Quoted Lines,""" 1st non-empty
+"7A4E ",Spec Example 7.6. Double Quoted Lines,""" 1st non-empty
 
  2nd non-empty<SPC>
 <TAB>3rd non-empty ""
@@ -1624,7 +1624,7 @@ g: h
 ",""" 1st non-empty\n2nd non-empty 3rd non-empty ""
 ",""" 1st non-empty\n2nd non-empty 3rd non-empty ""
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,√,,,,√,,√,,,
-7BMT,Node and Mapping Key Anchors [1.3],"---
+"7BMT ",Node and Mapping Key Anchors [1.3],"---
 top1: &node1
   &k1 key1: one
 top2: &node2 # comment
@@ -1707,7 +1707,7 @@ top5: &node5
 top6: &val6 six
 top7: &val7 seven
 ",,,,√,,,,,,,,,,,,,√,,,,,,,,√,,,,,,,,,√,
-7BUB,Spec Example 2.10. Node for “Sammy Sosa” appears twice in this document,"---
+"7BUB ",Spec Example 2.10. Node for “Sammy Sosa” appears twice in this document,"---
 hr:
   - Mark McGwire
   # Following node labeled SS
@@ -1749,7 +1749,7 @@ rbi:
 - *SS
 - Ken Griffey
 ",,,,√,√,,,,,,,,,,,√,,,,,,,,,,,,,,√,,,,,
-7FWL,Spec Example 6.24. Verbatim Tags,"!<tag:yaml.org,2002:str> foo :
+"7FWL ",Spec Example 6.24. Verbatim Tags,"!<tag:yaml.org,2002:str> foo :
   !<!bar> baz
 ","+STR
 +DOC
@@ -1764,7 +1764,7 @@ rbi:
 }
 ","!!str foo: !bar baz
 ",,,,√,,,,,,,,,,,,,,√,,√,,,,,,,,,,√,,,,,
-7LBH,Multiline double quoted implicit keys,"""a\nb"": 1
+"7LBH ",Multiline double quoted implicit keys,"""a\nb"": 1
 ""c
  d"": 1
 ","+STR
@@ -1773,7 +1773,7 @@ rbi:
 =VAL ""a\nb
 =VAL :1
 ",,,,√,,,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,
-7MNF,Missing colon,"top1:
+"7MNF ",Missing colon,"top1:
   key1: val1
 top2
 ","+STR
@@ -1785,7 +1785,7 @@ top2
 =VAL :val1
 -MAP
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-7T8X,Spec Example 8.10. Folded Lines - 8.13. Final Empty Lines,">
+"7T8X ",Spec Example 8.10. Folded Lines - 8.13. Final Empty Lines,">
 
  folded
  line
@@ -1819,7 +1819,7 @@ top2
 
   last line
 ",,,√,,,,,,,√,,,,,,,,,,,,,,,√,,,,,√,,,√,,
-7TMG,Comment in flow sequence before comma,"---
+"7TMG ",Comment in flow sequence before comma,"---
 [ word1
 # comment
 , word2]
@@ -1839,7 +1839,7 @@ top2
 - word1
 - word2
 ",,,,,√,√,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,
-7W2P,Block Mapping with Missing Values,"? a
+"7W2P ",Block Mapping with Missing Values,"? a
 ? b
 c:
 ","+STR
@@ -1863,7 +1863,7 @@ c:
 b:
 c:
 ",,,,√,,,,,,,,,√,,,,,,,,,,,,,,,,,,,,,,
-7Z25,Bare document after document end marker,"---
+"7Z25 ",Bare document after document end marker,"---
 scalar1
 ...
 key: value
@@ -1886,7 +1886,7 @@ key: value
 ...
 key: value
 ",,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,
-7ZZ5,Empty flow collections,"---
+"7ZZ5 ",Empty flow collections,"---
 nested sequences:
 - - - []
 - - - {}
@@ -1942,7 +1942,7 @@ nested sequences:
 key1: []
 key2: {}
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-82AN,Three dashes and content without space,"---word1
+"82AN ",Three dashes and content without space,"---word1
 word2
 ","+STR
 +DOC
@@ -1952,7 +1952,7 @@ word2
 ","""---word1 word2""
 ","'---word1 word2'
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,√,,
-87E4,Spec Example 7.8. Single Quoted Implicit Keys,"'implicit block key' : [
+"87E4 ",Spec Example 7.8. Single Quoted Implicit Keys,"'implicit block key' : [
   'implicit flow key' : value,
  ]
 ","+STR
@@ -1978,7 +1978,7 @@ word2
 ","'implicit block key':
 - 'implicit flow key': value
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-8CWC,Plain mapping key ending with colon,"---
+"8CWC ",Plain mapping key ending with colon,"---
 key ends with two colons::: value
 ","+STR
 +DOC ---
@@ -1994,14 +1994,14 @@ key ends with two colons::: value
 ","---
 'key ends with two colons::': value
 ",,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-8G76,Spec Example 6.10. Comment Lines,"  # Comment
+"8G76 ",Spec Example 6.10. Comment Lines,"  # Comment
 <SPC><SPC><SPC>
 
 
 ","+STR
 -STR
 ",,,,,√,,,,,,,,√,,,,,,,,,,,,,,√,√,,,,√,,,,,
-8KB6,Multiline plain flow mapping key without value,"---
+"8KB6 ",Multiline plain flow mapping key without value,"---
 - { single line, a: b}
 - { multi
   line, a: b}
@@ -2039,7 +2039,7 @@ key ends with two colons::: value
 - multi line:
   a: b
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-8MK2,Explicit Non-Specific Tag,"! a
+"8MK2 ",Explicit Non-Specific Tag,"! a
 ","+STR
 +DOC
 =VAL <!> :a
@@ -2047,7 +2047,7 @@ key ends with two colons::: value
 -STR
 ","""a""
 ",,,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,,√,,
-8QBE,Block Sequence in Block Mapping,"key:
+"8QBE ",Block Sequence in Block Mapping,"key:
  - item1
  - item2
 ","+STR
@@ -2071,7 +2071,7 @@ key ends with two colons::: value
 - item1
 - item2
 ",,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-8UDB,Spec Example 7.14. Flow Sequence Entries,"[
+"8UDB ",Spec Example 7.14. Flow Sequence Entries,"[
 ""double
  quoted"", 'single
            quoted',
@@ -2112,7 +2112,7 @@ single: pair,
 - - nested
 - single: pair
 ",,,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-8XDJ,Comment in plain multiline value,"key: word1
+"8XDJ ",Comment in plain multiline value,"key: word1
 #  xxx
   word2
 ","+STR
@@ -2121,7 +2121,7 @@ single: pair,
 =VAL :key
 =VAL :word1
 ",,,,√,√,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,
-8XYN,Anchor with unicode character,"---
+"8XYN ",Anchor with unicode character,"---
 - &😁 unicode anchor
 ","+STR
 +DOC ---
@@ -2136,7 +2136,7 @@ single: pair,
 ","---
 - &😁 unicode anchor
 ",,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,,
-93JH,Block Mappings in Block Sequence," - key: value
+"93JH ",Block Mappings in Block Sequence," - key: value
    key2: value2
  -
    key3: value3
@@ -2169,7 +2169,7 @@ single: pair,
   key2: value2
 - key3: value3
 ",,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-93WF,Spec Example 6.6. Line Folding [1.3],"--- >-
+"93WF ",Spec Example 6.6. Line Folding [1.3],"--- >-
   trimmed
 <SPC><SPC>
 <SPC>
@@ -2189,7 +2189,7 @@ single: pair,
 
   as space
 ",,,√,,,,,,,√,,,,,,,,,,,,,,,,√,,,,√,,,,√,
-96L6,"Spec Example 2.14. In the folded scalars, newlines become spaces","--- >
+"96L6 ","Spec Example 2.14. In the folded scalars, newlines become spaces","--- >
   Mark McGwire's
   year was crippled
   by a knee injury.
@@ -2202,11 +2202,11 @@ single: pair,
 ","--- >
   Mark McGwire's year was crippled by a knee injury.
 ",,,√,,,,,,,√,,,,,,,,,,,,,,,,,,,,√,,,,,
-98YD,Spec Example 5.5. Comment Indicator,"# Comment only.
+"98YD ",Spec Example 5.5. Comment Indicator,"# Comment only.
 ","+STR
 -STR
 ",,,,,,,,,,,,,√,,,,,,,,,,,,,,√,,,,,√,,,,,
-9BXH,Multiline doublequoted flow mapping key without value,"---
+"9BXH ",Multiline doublequoted flow mapping key without value,"---
 - { ""single line"", a: b}
 - { ""multi
   line"", a: b}
@@ -2244,7 +2244,7 @@ single: pair,
 - ""multi line"":
   a: b
 ",,,,√,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,
-9C9N,Wrong indented flow sequence,"---
+"9C9N ",Wrong indented flow sequence,"---
 flow: [a,
 b,
 c]
@@ -2255,7 +2255,7 @@ c]
 +SEQ
 =VAL :a
 ",,,,√,,,√,√,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,
-9CWY,Invalid scalar at the end of mapping,"key:
+"9CWY ",Invalid scalar at the end of mapping,"key:
  - item1
  - item2
 invalid
@@ -2268,7 +2268,7 @@ invalid
 =VAL :item2
 -SEQ
 ",,,,√,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-9DXL,Spec Example 9.6. Stream [1.3],"Mapping: Document
+"9DXL ",Spec Example 9.6. Stream [1.3],"Mapping: Document
 ---
 # Empty
 ...
@@ -2306,7 +2306,7 @@ null
 ---
 matches %: 20
 ",,,,,,,,,,,,,,,,,,,,,√,,,,,,,,√,,,,√,
-9FMG,Multi-level Mapping Indent,"a:
+"9FMG ",Multi-level Mapping Indent,"a:
   b:
     c: d
   e:
@@ -2345,7 +2345,7 @@ h: i
   ""h"": ""i""
 }
 ",,,,,√,,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,
-9HCY,Need document footer before directives,"!foo ""bar""
+"9HCY ",Need document footer before directives,"!foo ""bar""
 %TAG ! tag:example.com,2000:app/
 ---
 !foo ""bar""
@@ -2353,7 +2353,7 @@ h: i
 +DOC
 =VAL <!foo> ""bar
 ",,,,√,,,,,,,,,,,,,,,,√,,√,√,,√,,,,,,,,,,,,
-9J7A,Simple Mapping Indent,"foo:
+"9J7A ",Simple Mapping Indent,"foo:
   bar: baz
 ","+STR
 +DOC
@@ -2372,7 +2372,7 @@ h: i
   }
 }
 ",,,,,√,,,,,,,,,,,,,,,,,,,,,,,√,√,,,,,,,
-9JBA,Invalid comment after end of flow sequence,"---
+"9JBA ",Invalid comment after end of flow sequence,"---
 [ a, b, c, ]#invalid
 ","+STR
 +DOC ---
@@ -2382,7 +2382,7 @@ h: i
 =VAL :c
 -SEQ
 ",,,,√,,,√,√,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,
-9KAX,Various combinations of tags and anchors,"---
+"9KAX ",Various combinations of tags and anchors,"---
 &a1
 !!str
 scalar1
@@ -2479,18 +2479,18 @@ a6: 1
 &a10 !!str key10: value9
 --- &a11 !!str value11
 ",,,,√,,,,,,,,,,,,,√,√,,,,,,,,,,,,,,,√,,
-9KBC,Mapping starting at --- line,"--- key1: value1
+"9KBC ",Mapping starting at --- line,"--- key1: value1
     key2: value2
 ","+STR
 +DOC ---
 ",,,,√,,√,,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,
-9MAG,Flow sequence with invalid comma at the beginning,"---
+"9MAG ",Flow sequence with invalid comma at the beginning,"---
 [ , a, b, c ]
 ","+STR
 +DOC ---
 +SEQ
 ",,,,√,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-9MMW,Single Pair Implicit Entries,"- [ YAML : separate ]
+"9MMW ",Single Pair Implicit Entries,"- [ YAML : separate ]
 - [ ""JSON like"":adjacent ]
 - [ {JSON: like}:adjacent ]
 ","+STR
@@ -2525,7 +2525,7 @@ a6: 1
 - - ? JSON: like
     : adjacent
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-9SA2,Multiline double quoted flow mapping key,"---
+"9SA2 ",Multiline double quoted flow mapping key,"---
 - { ""single line"": value}
 - { ""multi
   line"": value}
@@ -2555,7 +2555,7 @@ a6: 1
 - ""single line"": value
 - ""multi line"": value
 ",,,,√,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,
-9SHH,Spec Example 5.8. Quoted Scalar Indicators,"single: 'text'
+"9SHH ",Spec Example 5.8. Quoted Scalar Indicators,"single: 'text'
 double: ""text""
 ","+STR
 +DOC
@@ -2572,7 +2572,7 @@ double: ""text""
   ""double"": ""text""
 }
 ",,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-9TFX,Spec Example 7.6. Double Quoted Lines [1.3],"---
+"9TFX ",Spec Example 7.6. Double Quoted Lines [1.3],"---
 "" 1st non-empty
 
  2nd non-empty<SPC>
@@ -2586,7 +2586,7 @@ double: ""text""
 ",""" 1st non-empty\n2nd non-empty 3rd non-empty ""
 ","--- "" 1st non-empty\n2nd non-empty 3rd non-empty ""
 ",,√,,,,,√,,,,,,,,,,,,,,,,,,√,,,,√,,,,√,
-9U5K,Spec Example 2.12. Compact Nested Mapping,"---
+"9U5K ",Spec Example 2.12. Compact Nested Mapping,"---
 # Products purchased
 - item    : Super Hoop
   quantity: 1
@@ -2640,7 +2640,7 @@ double: ""text""
 - item: Big Shoes
   quantity: 1
 ",,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-9WXW,Spec Example 6.18. Primary Tag Handle,"# Private
+"9WXW ",Spec Example 6.18. Primary Tag Handle,"# Private
 !foo ""bar""
 ...
 # Global
@@ -2661,7 +2661,7 @@ double: ""text""
 ...
 --- !<tag:example.com,2000:app/foo> ""bar""
 ",,,,,,,,,,,,,,,,,,√,√,√,,,√,,,,,,,√,,,√,,
-9YRD,Multiline Scalar at Top Level,"a
+"9YRD ",Multiline Scalar at Top Level,"a
 b<SPC><SPC>
   c
 d
@@ -2677,7 +2677,7 @@ e
 
   e'
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,√,,
-A2M4,Spec Example 6.2. Indentation Indicators,"? a
+"A2M4 ",Spec Example 6.2. Indentation Indicators,"? a
 : -<TAB>b
   -  -<TAB>c
      - d
@@ -2709,7 +2709,7 @@ A2M4,Spec Example 6.2. Indentation Indicators,"? a
 - - c
   - d
 ",,,,,√,,,,,,,,√,,,,,,,,,,,,,√,√,,,√,,√,,,√
-A6F9,Spec Example 8.4. Chomping Final Line Break,"strip: |-
+"A6F9 ",Spec Example 8.4. Chomping Final Line Break,"strip: |-
   text
 clip: |
   text
@@ -2739,7 +2739,7 @@ clip: |
 keep: |
   text
 ",,,√,,,,,,√,,,,,,,,,,,,,,,,,,,,,√,,,,,
-A984,Multiline Scalar in Mapping,"a: b
+"A984 ",Multiline Scalar in Mapping,"a: b
  c
 d:
  e
@@ -2761,7 +2761,7 @@ d:
 ","a: b c
 d: e f
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-AB8U,Sequence entry that looks like two with wrong indentation,"- single multiline
+"AB8U ",Sequence entry that looks like two with wrong indentation,"- single multiline
  - sequence entry
 ","+STR
 +DOC
@@ -2775,10 +2775,10 @@ AB8U,Sequence entry that looks like two with wrong indentation,"- single multili
 ]
 ","- single multiline - sequence entry
 ",,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-AVM7,Empty Stream,,"+STR
+"AVM7 ",Empty Stream,,"+STR
 -STR
 ",,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,,
-AZ63,Sequence With Same Indentation as Parent Mapping,"one:
+"AZ63 ",Sequence With Same Indentation as Parent Mapping,"one:
 - 2
 - 3
 four: 5
@@ -2803,7 +2803,7 @@ four: 5
   ""four"": 5
 }
 ",,,,,√,√,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,
-AZW3,Lookahead test cases,"- bla""keks: foo
+"AZW3 ",Lookahead test cases,"- bla""keks: foo
 - bla]keks: foo
 ","+STR
 +DOC
@@ -2828,7 +2828,7 @@ AZW3,Lookahead test cases,"- bla""keks: foo
   }
 ]
 ",,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,,
-B3HG,Spec Example 8.9. Folded Scalar [1.3],"--- >
+"B3HG ",Spec Example 8.9. Folded Scalar [1.3],"--- >
  folded
  text
 
@@ -2844,11 +2844,11 @@ B3HG,Spec Example 8.9. Folded Scalar [1.3],"--- >
 ","--- >
   folded text
 ",,√,,,,,,,√,,,,,,,,,,,,,,,,,,,,√,,,,√,
-B63P,Directive without document,"%YAML 1.2
+"B63P ",Directive without document,"%YAML 1.2
 ...
 ","+STR
 ",,,,√,,,,,,,,,,,,,,,,,,,,,√,√,,,,,,,,,,,
-BD7L,Invalid mapping after sequence,"- item1
+"BD7L ",Invalid mapping after sequence,"- item1
 - item2
 invalid: x
 ","+STR
@@ -2857,7 +2857,7 @@ invalid: x
 =VAL :item1
 =VAL :item2
 ",,,,√,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-BEC7,Spec Example 6.14. “YAML” directive,"%YAML 1.3 # Attempt parsing
+"BEC7 ",Spec Example 6.14. “YAML” directive,"%YAML 1.3 # Attempt parsing
           # with a warning
 ---
 ""foo""
@@ -2869,7 +2869,7 @@ BEC7,Spec Example 6.14. “YAML” directive,"%YAML 1.3 # Attempt parsing
 ","""foo""
 ","--- ""foo""
 ",,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,√,,,,,
-BF9H,Trailing comment in multiline plain scalar,"---
+"BF9H ",Trailing comment in multiline plain scalar,"---
 plain: a
        b # end of scalar
        c
@@ -2879,14 +2879,14 @@ plain: a
 =VAL :plain
 =VAL :a b
 ",,,,√,√,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,
-BS4K,Comment between plain scalar lines,"word1  # comment
+"BS4K ",Comment between plain scalar lines,"word1  # comment
 word2
 ","+STR
 +DOC
 =VAL :word1
 -DOC
 ",,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-BU8L,Node Anchor and Tag on Seperate Lines,"key: &anchor
+"BU8L ",Node Anchor and Tag on Seperate Lines,"key: &anchor
  !!map
   a: b
 ","+STR
@@ -2908,7 +2908,7 @@ BU8L,Node Anchor and Tag on Seperate Lines,"key: &anchor
 ","key: &anchor !!map
   a: b
 ",,,,,,,,,,,,,,,,,√,√,,,,,,,,,√,,,,,,√,,
-C2DT,Spec Example 7.18. Flow Mapping Adjacent Values,"{
+"C2DT ",Spec Example 7.18. Flow Mapping Adjacent Values,"{
 ""adjacent"":value,
 ""readable"": value,
 ""empty"":
@@ -2934,14 +2934,14 @@ C2DT,Spec Example 7.18. Flow Mapping Adjacent Values,"{
 ""readable"": value
 ""empty"":
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-C2SP,Flow Mapping Key on two lines,"[23
+"C2SP ",Flow Mapping Key on two lines,"[23
 ]: 42
 ","+STR
 +DOC
 +SEQ
 =VAL :23
 ",,,,√,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-C4HZ,Spec Example 2.24. Global Tags,"%TAG ! tag:clarkevans.com,2002:
+"C4HZ ",Spec Example 2.24. Global Tags,"%TAG ! tag:clarkevans.com,2002:
 --- !shape
   # Use the ! handle for presenting
   # tag:clarkevans.com,2002:circle
@@ -3034,7 +3034,7 @@ C4HZ,Spec Example 2.24. Global Tags,"%TAG ! tag:clarkevans.com,2002:
   color: 0xFFEEBB
   text: Pretty vector drawing.
 ",,,,,,,,,,,,,,,,√,,√,√,,,,√,,,,,,,√,,,,,
-CC74,Spec Example 6.20. Tag Handles,"%TAG !e! tag:example.com,2000:app/
+"CC74 ",Spec Example 6.20. Tag Handles,"%TAG !e! tag:example.com,2000:app/
 ---
 !e!foo ""bar""
 ","+STR
@@ -3045,7 +3045,7 @@ CC74,Spec Example 6.20. Tag Handles,"%TAG !e! tag:example.com,2000:app/
 ","""bar""
 ","--- !<tag:example.com,2000:app/foo> ""bar""
 ",,,,,,,,,,,,,,,,,,√,,√,,,√,,,,,,,√,,,,,
-CFD4,Empty implicit key in single pair flow sequences,"- [ : empty key ]
+"CFD4 ",Empty implicit key in single pair flow sequences,"- [ : empty key ]
 - [: another empty key]
 ","+STR
 +DOC
@@ -3068,7 +3068,7 @@ CFD4,Empty implicit key in single pair flow sequences,"- [ : empty key ]
 ",,"- - : empty key
 - - : another empty key
 ",,,,,√,√,,,,,,√,,,,,,,,,,,,,,,,,,,,,,,
-CML9,Missing comma in flow,"key: [ word1
+"CML9 ",Missing comma in flow,"key: [ word1
 #  xxx
   word2 ]
 ","+STR
@@ -3078,7 +3078,7 @@ CML9,Missing comma in flow,"key: [ word1
 +SEQ
 =VAL :word1
 ",,,,√,,,,√,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,
-CN3R,Various location of anchors in flow sequence,"&flowseq [
+"CN3R ",Various location of anchors in flow sequence,"&flowseq [
  a: b,
  &c c: d,
  { &e e: f },
@@ -3127,7 +3127,7 @@ CN3R,Various location of anchors in flow sequence,"&flowseq [
 - &g
   g: h
 ",,,,√,√,√,,,,,,,,,,,√,,,,,,,,,,,,,,,,,,
-CPZ3,Doublequoted scalar starting with a tab,"---
+"CPZ3 ",Doublequoted scalar starting with a tab,"---
 tab: ""\tstring""
 ","+STR
 +DOC ---
@@ -3143,14 +3143,14 @@ tab: ""\tstring""
 ","---
 tab: ""\tstring""
 ",,,√,,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,
-CQ3W,Double quoted string without closing quote,"---
+"CQ3W ",Double quoted string without closing quote,"---
 key: ""missing closing quote
 ","+STR
 +DOC ---
 +MAP
 =VAL :key
 ",,,,√,,,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,
-CT4Q,Spec Example 7.20. Single Pair Explicit Entry,"[
+"CT4Q ",Spec Example 7.20. Single Pair Explicit Entry,"[
 ? foo
  bar : baz
 ]
@@ -3171,7 +3171,7 @@ CT4Q,Spec Example 7.20. Single Pair Explicit Entry,"[
 ]
 ","- foo bar: baz
 ",,,,√,,√,,,,,,,√,,,,,,,,,,,,,,,,,√,,,,,
-CTN5,Flow sequence with invalid extra comma,"---
+"CTN5 ",Flow sequence with invalid extra comma,"---
 [ a, b, c, , ]
 ","+STR
 +DOC ---
@@ -3180,7 +3180,7 @@ CTN5,Flow sequence with invalid extra comma,"---
 =VAL :b
 =VAL :c
 ",,,,√,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-CUP7,Spec Example 5.6. Node Property Indicators,"anchored: !local &anchor value
+"CUP7 ",Spec Example 5.6. Node Property Indicators,"anchored: !local &anchor value
 alias: *anchor
 ","+STR
 +DOC
@@ -3199,7 +3199,7 @@ alias: *anchor
 ","anchored: &anchor !local value
 alias: *anchor
 ",,,,,,,,,,,,,,,,√,,√,√,,,,,,,,,,,√,,,,,
-CVW2,Invalid comment after comma,"---
+"CVW2 ",Invalid comment after comma,"---
 [ a, b, c,#invalid
 ]
 ","+STR
@@ -3209,11 +3209,11 @@ CVW2,Invalid comment after comma,"---
 =VAL :b
 =VAL :c
 ",,,,√,,,√,√,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,
-CXX2,Mapping with anchor on document start line,"--- &anchor a: b
+"CXX2 ",Mapping with anchor on document start line,"--- &anchor a: b
 ","+STR
 +DOC ---
 ",,,,√,,√,,,,,,,,,,,,,√,,,,,√,,,,,,,,,,,,,
-D49Q,Multiline single quoted implicit keys,"'a\nb': 1
+"D49Q ",Multiline single quoted implicit keys,"'a\nb': 1
 'c
  d': 1
 ","+STR
@@ -3222,7 +3222,7 @@ D49Q,Multiline single quoted implicit keys,"'a\nb': 1
 =VAL 'a\\nb
 =VAL :1
 ",,,,√,,√,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-D83L,Block scalar indicator order,"- |2-
+"D83L ",Block scalar indicator order,"- |2-
   explicit indent and chomp
 - |-2
   chomp and explicit indent
@@ -3243,7 +3243,7 @@ D83L,Block scalar indicator order,"- |2-
 - |-
   chomp and explicit indent
 ",,,,,,,,,√,,,,,,,,,,,,,,,,,,√,,,,,,,,
-D88J,Flow Sequence in Block Mapping,"a: [b, c]
+"D88J ",Flow Sequence in Block Mapping,"a: [b, c]
 ","+STR
 +DOC
 +MAP
@@ -3265,7 +3265,7 @@ D88J,Flow Sequence in Block Mapping,"a: [b, c]
 - b
 - c
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-D9TU,Single Pair Block Mapping,"foo: bar
+"D9TU ",Single Pair Block Mapping,"foo: bar
 ","+STR
 +DOC
 +MAP
@@ -3278,7 +3278,7 @@ D9TU,Single Pair Block Mapping,"foo: bar
   ""foo"": ""bar""
 }
 ",,,,,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,
-DBG4,Spec Example 7.10. Plain Characters,"# Outside flow collection:
+"DBG4 ",Spec Example 7.10. Plain Characters,"# Outside flow collection:
 - ::vector
 - "": - ()""
 - Up, up, and away!
@@ -3333,7 +3333,7 @@ DBG4,Spec Example 7.10. Plain Characters,"# Outside flow collection:
   - -123
   - http://example.com/foo#bar
 ",,,√,,√,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-DC7X,Various trailing tabs,"a: b<TAB>
+"DC7X ",Various trailing tabs,"a: b<TAB>
 seq:<TAB>
  - a<TAB>
 c: d<TAB>#X
@@ -3363,7 +3363,7 @@ seq:
 - a
 c: d
 ",,,,,,,,,,,,,,,,,,,,,,,,,√,√,,,,,,,,,
-DFF7,Spec Example 7.16. Flow Mapping Entries,"{
+"DFF7 ",Spec Example 7.16. Flow Mapping Entries,"{
 ? explicit: entry,
 implicit: entry,
 ?
@@ -3384,7 +3384,7 @@ implicit: entry,
 implicit: entry
 :
 ",,,,√,,√,,,,,,,√,,,,,,,,,,,,,,,,,√,,,,,
-DHP8,Flow Sequence,"[foo, bar, 42]
+"DHP8 ",Flow Sequence,"[foo, bar, 42]
 ","+STR
 +DOC
 +SEQ
@@ -3403,7 +3403,7 @@ DHP8,Flow Sequence,"[foo, bar, 42]
 - bar
 - 42
 ",,,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-DK3J,Zero indented block scalar with line that looks like a comment,"--- >
+"DK3J ",Zero indented block scalar with line that looks like a comment,"--- >
 line1
 # no comment
 line3
@@ -3416,7 +3416,7 @@ line3
 ","--- >
   line1 # no comment line3
 ",,,√,,,,,,,√,,,,,,,,,,,,,,,√,,,,,,,,,,
-DK4H,Implicit key followed by newline,"---
+"DK4H ",Implicit key followed by newline,"---
 [ key
   : value ]
 ","+STR
@@ -3424,7 +3424,7 @@ DK4H,Implicit key followed by newline,"---
 +SEQ
 =VAL :key
 ",,,,√,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-DMG6,Wrong indendation in Map,"key:
+"DMG6 ",Wrong indendation in Map,"key:
   ok: 1
  wrong: 2
 ","+STR
@@ -3436,7 +3436,7 @@ DMG6,Wrong indendation in Map,"key:
 =VAL :1
 -MAP
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,
-DWX9,Spec Example 8.8. Literal Content,"|
+"DWX9 ",Spec Example 8.8. Literal Content,"|
 <SPC>
 <SPC><SPC>
   literal
@@ -3460,7 +3460,7 @@ DWX9,Spec Example 8.8. Literal Content,"|
 
   text
 ",,√,,,,,,√,,,,,,,,,,,,,,,,√,√,,,,√,,,√,,
-E76Z,Aliases in Implicit Block Mapping,"&a a: &b b
+"E76Z ",Aliases in Implicit Block Mapping,"&a a: &b b
 *b : *a
 ","+STR
 +DOC
@@ -3479,7 +3479,7 @@ E76Z,Aliases in Implicit Block Mapping,"&a a: &b b
 ","&a a: &b b
 *b : *a
 ",,,,√,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,,,
-EB22,Missing document-end marker before directive,"---
+"EB22 ",Missing document-end marker before directive,"---
 scalar1 # comment
 %YAML 1.2
 ---
@@ -3489,7 +3489,7 @@ scalar2
 =VAL :scalar1
 -DOC
 ",,,,√,,,,,,,,,,,,,,,,,,,√,,√,,,,,,,,,,,,
-EHF6,Tags for Flow Objects,"!!map {
+"EHF6 ",Tags for Flow Objects,"!!map {
   k: !!seq
   [ a, !!str b]
 }
@@ -3515,14 +3515,14 @@ k: !!seq
 - a
 - !!str b
 ",,,,√,√,√,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,
-EW3V,Wrong indendation in mapping,"k1: v1
+"EW3V ",Wrong indendation in mapping,"k1: v1
  k2: v2
 ","+STR
 +DOC
 +MAP
 =VAL :k1
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,
-EX5H,Multiline Scalar at Top Level [1.3],"---
+"EX5H ",Multiline Scalar at Top Level [1.3],"---
 a
 b<SPC><SPC>
   c
@@ -3542,7 +3542,7 @@ e
 
 e
 ",,√,,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,√,
-EXG3,Three dashes and content without space [1.3],"---
+"EXG3 ",Three dashes and content without space [1.3],"---
 ---word1
 word2
 ","+STR
@@ -3554,7 +3554,7 @@ word2
 ","'---word1 word2'
 ","--- '---word1 word2'
 ",,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,√,
-F2C7,Anchors and Tags," - &a !!str a
+"F2C7 ",Anchors and Tags," - &a !!str a
  - !!int 2
  - !!int &c 4
  - &d d
@@ -3579,7 +3579,7 @@ F2C7,Anchors and Tags," - &a !!str a
 - &c !!int 4
 - &d d
 ",,,,,,,,,,,,,,,,,√,√,,,,,,,,,,,,,,,,,
-F3CP,Nested flow collections on one line,"---
+"F3CP ",Nested flow collections on one line,"---
 { a: [b, c, { d: [e, f] } ] }
 ","+STR
 +DOC ---
@@ -3619,7 +3619,7 @@ a:
   - e
   - f
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-F6MC,More indented lines at the beginning of folded block scalars,"---
+"F6MC ",More indented lines at the beginning of folded block scalars,"---
 a: >2
    more indented
   regular
@@ -3652,7 +3652,7 @@ b: >2
    more indented
   regular
 ",,,,,,,,,√,,,,,,,,,,,,,,,,,√,,,,,,,,
-F8F9,Spec Example 8.5. Chomping Trailing Lines," # Strip
+"F8F9 ",Spec Example 8.5. Chomping Trailing Lines," # Strip
   # Comments:
 strip: |-
   # text
@@ -3697,7 +3697,7 @@ keep: |+
 
 ...
 ",,,√,,,,,,√,,,,,,,,,,,,,,,,√,,,,,√,,,,,
-FBC9,Allowed characters in plain scalars,"safe: a!""#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~
+"FBC9 ",Allowed characters in plain scalars,"safe: a!""#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~
      !""#$%&'()*+,-./09:;<=>?@AZ[\]^_`az{|}~
 safe question mark: ?foo
 safe colon: :foo
@@ -3727,7 +3727,7 @@ safe question mark: ?foo
 safe colon: :foo
 safe dash: -foo
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-FH7J,Tags on Empty Scalars,"- !!str
+"FH7J ",Tags on Empty Scalars,"- !!str
 -
   !!null : a
   b: !!str
@@ -3754,7 +3754,7 @@ FH7J,Tags on Empty Scalars,"- !!str
   b: !!str
 - !!str : !!null
 ",,,√,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,
-FP8R,Zero indented block scalar,"--- >
+"FP8R ",Zero indented block scalar,"--- >
 line1
 line2
 line3
@@ -3767,7 +3767,7 @@ line3
 ","--- >
   line1 line2 line3
 ",,,√,,,,,,,√,,,,,,,,,,,,,,,,,√,,,,,,,,
-FQ7F,Spec Example 2.1. Sequence of Scalars,"- Mark McGwire
+"FQ7F ",Spec Example 2.1. Sequence of Scalars,"- Mark McGwire
 - Sammy Sosa
 - Ken Griffey
 ","+STR
@@ -3785,7 +3785,7 @@ FQ7F,Spec Example 2.1. Sequence of Scalars,"- Mark McGwire
   ""Ken Griffey""
 ]
 ",,,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-FRK4,Spec Example 7.3. Completely Empty Flow Nodes,"{
+"FRK4 ",Spec Example 7.3. Completely Empty Flow Nodes,"{
   ? foo :,
   : bar,
 }
@@ -3800,7 +3800,7 @@ FRK4,Spec Example 7.3. Completely Empty Flow Nodes,"{
 -DOC
 -STR
 ",,,,,,√,,√,,,,,,√,√,,,,,,,,,,,,,,,,,√,,,,,
-FTA2,Single block sequence with anchor and explicit document start,"--- &sequence
+"FTA2 ",Single block sequence with anchor and explicit document start,"--- &sequence
 - a
 ","+STR
 +DOC ---
@@ -3815,7 +3815,7 @@ FTA2,Single block sequence with anchor and explicit document start,"--- &sequenc
 ","--- &sequence
 - a
 ",,,,,√,,,,,,,,,,,,√,,,,,√,,,,,,,,,,,,,
-FUP4,Flow Sequence in Flow Sequence,"[a, [b, c]]
+"FUP4 ",Flow Sequence in Flow Sequence,"[a, [b, c]]
 ","+STR
 +DOC
 +SEQ
@@ -3838,7 +3838,7 @@ FUP4,Flow Sequence in Flow Sequence,"[a, [b, c]]
 - - b
   - c
 ",,,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-G4RS,Spec Example 2.17. Quoted Scalars,"unicode: ""Sosa did fine.\u263A""
+"G4RS ",Spec Example 2.17. Quoted Scalars,"unicode: ""Sosa did fine.\u263A""
 control: ""\b1998\t1999\t2000\n""
 hex esc: ""\x0d\x0a is \r\n""
 
@@ -3878,7 +3878,7 @@ single: '""Howdy!"" he cried.'
 quoted: ' # Not a ''comment''.'
 tie-fighter: '|\-*-/|'
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-G5U8,Plain dashes in flow sequence,"---
+"G5U8 ",Plain dashes in flow sequence,"---
 - [-, -]
 ","+STR
 +DOC ---
@@ -3900,7 +3900,7 @@ G5U8,Plain dashes in flow sequence,"---
 - - '-'
   - '-'
 ",,,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-G7JE,Multiline implicit keys,"a\nb: 1
+"G7JE ",Multiline implicit keys,"a\nb: 1
 c
  d: 1
 ","+STR
@@ -3909,7 +3909,7 @@ c
 =VAL :a\\nb
 =VAL :1
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-G992,Spec Example 8.9. Folded Scalar,">
+"G992 ",Spec Example 8.9. Folded Scalar,">
  folded
  text
 
@@ -3923,7 +3923,7 @@ G992,Spec Example 8.9. Folded Scalar,">
 ",">
   folded text
 ",,,√,,,,,,,√,,,,,,,,,,,,,,,,,,,,√,,,√,,
-G9HC,Invalid anchor in zero indented sequence,"---
+"G9HC ",Invalid anchor in zero indented sequence,"---
 seq:
 &anchor
 - a
@@ -3933,7 +3933,7 @@ seq:
 +MAP
 =VAL :seq
 ",,,,√,,,√,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,,
-GDY7,Comment that looks like a mapping key,"key: value
+"GDY7 ",Comment that looks like a mapping key,"key: value
 this is #not a: key
 ","+STR
 +DOC
@@ -3941,7 +3941,7 @@ this is #not a: key
 =VAL :key
 =VAL :value
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,
-GH63,Mixed Block Mapping (explicit to implicit),"? a
+"GH63 ",Mixed Block Mapping (explicit to implicit),"? a
 : 1.3
 fifteen: d
 ","+STR
@@ -3961,7 +3961,7 @@ fifteen: d
 ","a: 1.3
 fifteen: d
 ",,,,√,,,,,,,,,√,,,,,,,,,,,,,,,,,,,,,,
-GT5M,Node anchor in sequence,"- item1
+"GT5M ",Node anchor in sequence,"- item1
 &node
 - item2
 ","+STR
@@ -3969,7 +3969,7 @@ GT5M,Node anchor in sequence,"- item1
 +SEQ
 =VAL :item1
 ",,,,√,,,√,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,,
-H2RW,Blank lines,"foo: 1
+"H2RW ",Blank lines,"foo: 1
 
 bar: 2
 <SPC><SPC><SPC><SPC>
@@ -4012,7 +4012,7 @@ text: |
 
   d
 ",,√,,,,,,√,,,,,,,,,,,,,,,,√,√,,,,,,,,,
-H3Z8,Literal unicode,"---
+"H3Z8 ",Literal unicode,"---
 wanted: love ♥ and peace ☮
 ","+STR
 +DOC ---
@@ -4028,7 +4028,7 @@ wanted: love ♥ and peace ☮
 ","---
 wanted: ""love \u2665 and peace \u262E""
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-H7J7,Node anchor not indented,"key: &x
+"H7J7 ",Node anchor not indented,"key: &x
 !!map
   a: b
 ","+STR
@@ -4037,7 +4037,7 @@ H7J7,Node anchor not indented,"key: &x
 =VAL :key
 =VAL &x :
 ",,,,√,,,,,,,,,,,,,,,√,√,,,,,,,,,√,,,,,,,,
-HMK4,Spec Example 2.16. Indentation determines scope,"name: Mark McGwire
+"HMK4 ",Spec Example 2.16. Indentation determines scope,"name: Mark McGwire
 accomplishment: >
   Mark set a major league
   home run record in 1998.
@@ -4068,7 +4068,7 @@ stats: |
   65 Home Runs
   0.278 Batting Average
 ",,,,,,,,,√,√,,,,,,,,,,,,,,,,,,,,√,,,,,
-HMQ5,Spec Example 6.23. Node Properties,"!!str &a1 ""foo"":
+"HMQ5 ",Spec Example 6.23. Node Properties,"!!str &a1 ""foo"":
   !!str bar
 &a2 baz : *a1
 ","+STR
@@ -4088,14 +4088,14 @@ HMQ5,Spec Example 6.23. Node Properties,"!!str &a1 ""foo"":
 ","&a1 !!str ""foo"": !!str bar
 &a2 baz: *a1
 ",,,,,,,,,,,,,,,,√,,√,,,,,,,,,,,,√,,,,,
-HRE5,Double quoted scalar with escaped single quote,"---
+"HRE5 ",Double quoted scalar with escaped single quote,"---
 double: ""quoted \' scalar""
 ","+STR
 +DOC ---
 +MAP
 =VAL :double
 ",,,,√,,,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,
-HS5T,Spec Example 7.12. Plain Lines,"1st non-empty
+"HS5T ",Spec Example 7.12. Plain Lines,"1st non-empty
 
  2nd non-empty<SPC>
 <TAB>3rd non-empty
@@ -4109,7 +4109,7 @@ HS5T,Spec Example 7.12. Plain Lines,"1st non-empty
 
   2nd non-empty 3rd non-empty'
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,√,,,,√,,√,,,
-HU3P,Invalid Mapping in plain scalar,"key:
+"HU3P ",Invalid Mapping in plain scalar,"key:
   word1 word2
   no: key
 ","+STR
@@ -4117,11 +4117,11 @@ HU3P,Invalid Mapping in plain scalar,"key:
 +MAP
 =VAL :key
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-HWV9,Document-end marker,"...
+"HWV9 ",Document-end marker,"...
 ","+STR
 -STR
 ",,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,
-J3BT,Spec Example 5.12. Tabs and Spaces,"# Tabs and spaces
+"J3BT ",Spec Example 5.12. Tabs and Spaces,"# Tabs and spaces
 quoted: ""Quoted <TAB>""
 block:<TAB>|
   void main() {
@@ -4147,7 +4147,7 @@ block: |
   <TAB>printf(""Hello, world!\n"");
   }
 ",,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,√,,√,,,
-J5UC,Multiple Pair Block Mapping,"foo: blue
+"J5UC ",Multiple Pair Block Mapping,"foo: blue
 bar: arrr
 baz: jazz
 ","+STR
@@ -4168,7 +4168,7 @@ baz: jazz
   ""baz"": ""jazz""
 }
 ",,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-J7PZ,Spec Example 2.26. Ordered Mappings,"# The !!omap tag is one of the optional types
+"J7PZ ",Spec Example 2.26. Ordered Mappings,"# The !!omap tag is one of the optional types
 # introduced for YAML 1.1. In 1.2, it is not
 # part of the standard tags and should not be
 # enabled by default.
@@ -4213,7 +4213,7 @@ J7PZ,Spec Example 2.26. Ordered Mappings,"# The !!omap tag is one of the optiona
 - Sammy Sosa: 63
 - Ken Griffy: 58
 ",,,,√,,,,,,,,,,,,,,√,,√,,,,,,,,,,√,,,,,
-J7VC,Empty Lines Between Mapping Elements,"one: 2
+"J7VC ",Empty Lines Between Mapping Elements,"one: 2
 
 
 three: 4
@@ -4234,7 +4234,7 @@ three: 4
 ","one: 2
 three: 4
 ",,,,√,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,
-J9HZ,Spec Example 2.9. Single Document with Two Comments,"---
+"J9HZ ",Spec Example 2.9. Single Document with Two Comments,"---
 hr: # 1998 hr ranking
   - Mark McGwire
   - Sammy Sosa
@@ -4276,7 +4276,7 @@ rbi:
 - Sammy Sosa
 - Ken Griffey
 ",,,,√,√,,,,,,,,,,,,,,,,,,,,√,,,,,√,,,,,
-JHB9,Spec Example 2.7. Two Documents in a Stream,"# Ranking of 1998 home runs
+"JHB9 ",Spec Example 2.7. Two Documents in a Stream,"# Ranking of 1998 home runs
 ---
 - Mark McGwire
 - Sammy Sosa
@@ -4318,7 +4318,7 @@ JHB9,Spec Example 2.7. Two Documents in a Stream,"# Ranking of 1998 home runs
 - Chicago Cubs
 - St Louis Cardinals
 ",,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,√,,,,,
-JQ4R,Spec Example 8.14. Block Sequence,"block sequence:
+"JQ4R ",Spec Example 8.14. Block Sequence,"block sequence:
   - one
   - two : three
 ","+STR
@@ -4347,7 +4347,7 @@ JQ4R,Spec Example 8.14. Block Sequence,"block sequence:
 - one
 - two: three
 ",,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-JR7V,Question marks in scalars,"- a?string
+"JR7V ",Question marks in scalars,"- a?string
 - another ? string
 - key: value?
 - [a?string]
@@ -4416,7 +4416,7 @@ JR7V,Question marks in scalars,"- a?string
 - key: value?
 - key?: value
 ",,,√,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-JS2J,Spec Example 6.29. Node Anchors,"First occurrence: &anchor Value
+"JS2J ",Spec Example 6.29. Node Anchors,"First occurrence: &anchor Value
 Second occurrence: *anchor
 ","+STR
 +DOC
@@ -4433,7 +4433,7 @@ Second occurrence: *anchor
   ""Second occurrence"": ""Value""
 }
 ",,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,√,,,,,
-JTV5,Block Mapping with Multiline Scalars,"? a
+"JTV5 ",Block Mapping with Multiline Scalars,"? a
   true
 : null
   d
@@ -4456,7 +4456,7 @@ JTV5,Block Mapping with Multiline Scalars,"? a
 ","a true: null d
 e 42:
 ",,,√,√,,,,,,,,,√,,,,,,,,,,,,,,,,,,,,,,
-JY7Z,Trailing content that looks like a mapping,"key1: ""quoted1""
+"JY7Z ",Trailing content that looks like a mapping,"key1: ""quoted1""
 key2: ""quoted2"" no key: nor value
 key3: ""quoted3""
 ","+STR
@@ -4467,7 +4467,7 @@ key3: ""quoted3""
 =VAL :key2
 =VAL ""quoted2
 ",,,,√,,√,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,
-K3WX,Colon and adjacent value after comment on next line,"---
+"K3WX ",Colon and adjacent value after comment on next line,"---
 { ""foo"" # comment
   :bar }
 ","+STR
@@ -4484,7 +4484,7 @@ K3WX,Colon and adjacent value after comment on next line,"---
 ","---
 ""foo"": bar
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,
-K4SU,Multiple Entry Block Sequence,"- foo
+"K4SU ",Multiple Entry Block Sequence,"- foo
 - bar
 - 42
 ","+STR
@@ -4502,7 +4502,7 @@ K4SU,Multiple Entry Block Sequence,"- foo
   42
 ]
 ",,,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-K527,Spec Example 6.6. Line Folding,">-
+"K527 ",Spec Example 6.6. Line Folding,">-
   trimmed
 <SPC><SPC>
 <SPC>
@@ -4522,7 +4522,7 @@ K527,Spec Example 6.6. Line Folding,">-
 
   as space
 ",,,√,,,,,,,√,,,,,,,,,,,,,,,,√,,,,√,,,√,,
-K54U,Tab after document header,"---<TAB>scalar
+"K54U ",Tab after document header,"---<TAB>scalar
 ","+STR
 +DOC ---
 =VAL :scalar
@@ -4532,7 +4532,7 @@ K54U,Tab after document header,"---<TAB>scalar
 ","--- scalar
 ...
 ",,,,,,,,,,,,,,,,,,,,,,√,,,,√,,,,,,,,,
-K858,Spec Example 8.6. Empty Scalar Chomping,"strip: >-
+"K858 ",Spec Example 8.6. Empty Scalar Chomping,"strip: >-
 
 clip: >
 
@@ -4561,7 +4561,7 @@ keep: |2+
 
 ...
 ",,,,,,,,,√,√,,,,,,,,,,,,,,,,√,,,,√,,,,,
-KK5P,Various combinations of explicit block mappings,"complex1:
+"KK5P ",Various combinations of explicit block mappings,"complex1:
   ? - a
 complex2:
   ? - a
@@ -4636,7 +4636,7 @@ complex5:
   ? - a
   : - b
 ",,,,√,√,,,,,,,,√,,,,,,,,,,,,,,,,,,,,,,
-KMK3,Block Submapping,"foo:
+"KMK3 ",Block Submapping,"foo:
   bar: 1
 baz: 2
 ","+STR
@@ -4659,7 +4659,7 @@ baz: 2
   ""baz"": 2
 }
 ",,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-KS4U,Invalid item after end of flow sequence,"---
+"KS4U ",Invalid item after end of flow sequence,"---
 [
 sequence item
 ]
@@ -4670,7 +4670,7 @@ invalid item
 =VAL :sequence item
 -SEQ
 ",,,,√,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-KSS4,Scalars on --- line,"--- ""quoted
+"KSS4 ",Scalars on --- line,"--- ""quoted
 string""
 --- &node foo
 ","+STR
@@ -4689,7 +4689,7 @@ string""
 ","--- ""quoted string""
 --- &node foo
 ",,√,,,,,,,,,,,,,,√,,,,,√,,,,,,,,,,,√,,
-L94M,Tags in Explicit Mapping,"? !!str a
+"L94M ",Tags in Explicit Mapping,"? !!str a
 : !!int 47
 ? c
 : !!str d
@@ -4710,7 +4710,7 @@ L94M,Tags in Explicit Mapping,"? !!str a
 ","!!str a: !!int 47
 c: !!str d
 ",,,,√,,,,,,,,,√,,,,,√,,,,,,,,,,,,,,,,,
-L9U5,Spec Example 7.11. Plain Implicit Keys,"implicit block key : [
+"L9U5 ",Spec Example 7.11. Plain Implicit Keys,"implicit block key : [
   implicit flow key : value,
  ]
 ","+STR
@@ -4736,7 +4736,7 @@ L9U5,Spec Example 7.11. Plain Implicit Keys,"implicit block key : [
 ","implicit block key:
 - implicit flow key: value
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-LE5A,Spec Example 7.24. Flow Nodes,"- !!str ""a""
+"LE5A ",Spec Example 7.24. Flow Nodes,"- !!str ""a""
 - 'b'
 - &anchor ""c""
 - *anchor
@@ -4760,12 +4760,12 @@ LE5A,Spec Example 7.24. Flow Nodes,"- !!str ""a""
   """"
 ]
 ",,,,,,,,,,,,,,,,,√,,√,,,,,,,,,,,,√,,,,,
-LHL4,Invalid tag,"---
+"LHL4 ",Invalid tag,"---
 !invalid{}tag scalar
 ","+STR
 +DOC ---
 ",,,,√,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,
-LP6E,Whitespace After Scalars in Flow,"- [a, b , c ]
+"LP6E ",Whitespace After Scalars in Flow,"- [a, b , c ]
 - { ""a""  : b
    , c : 'd' ,
    e   : ""f""
@@ -4813,7 +4813,7 @@ LP6E,Whitespace After Scalars in Flow,"- [a, b , c ]
   e: ""f""
 - []
 ",,,√,,,√,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,
-LQZ7,Spec Example 7.4. Double Quoted Implicit Keys,"""implicit block key"" : [
+"LQZ7 ",Spec Example 7.4. Double Quoted Implicit Keys,"""implicit block key"" : [
   ""implicit flow key"" : value,
  ]
 ","+STR
@@ -4839,7 +4839,7 @@ LQZ7,Spec Example 7.4. Double Quoted Implicit Keys,"""implicit block key"" : [
 ","""implicit block key"":
 - ""implicit flow key"": value
 ",,,√,,,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-LX3P,Implicit Flow Mapping Key on one line,"[flow]: block
+"LX3P ",Implicit Flow Mapping Key on one line,"[flow]: block
 ","+STR
 +DOC
 +MAP
@@ -4853,7 +4853,7 @@ LX3P,Implicit Flow Mapping Key on one line,"[flow]: block
 ",,"? - flow
 : block
 ",,,,√,√,√,,,,,,,,√,,,,,,,,,,,,,,,,,,,√,,
-M29M,Literal Block Scalar,"a: |
+"M29M ",Literal Block Scalar,"a: |
  ab
 <SPC>
  cd
@@ -4879,7 +4879,7 @@ M29M,Literal Block Scalar,"a: |
   ef
 ...
 ",,,√,,,,,,√,,,,,,,,,,,,,,,,,√,,,,,,,,,
-M5C3,Spec Example 8.21. Block Scalar Nodes,"literal: |2
+"M5C3 ",Spec Example 8.21. Block Scalar Nodes,"literal: |2
   value
 folded:
    !foo
@@ -4904,7 +4904,7 @@ folded:
 folded: !foo >
   value
 ",,,,,,,,,√,√,,,,,,,,√,√,,,,,,,,√,,,√,,,√,,
-M5DY,Spec Example 2.11. Mapping between Sequences,"? - Detroit Tigers
+"M5DY ",Spec Example 2.11. Mapping between Sequences,"? - Detroit Tigers
   - Chicago cubs
 :
   - 2001-07-23
@@ -4944,7 +4944,7 @@ M5DY,Spec Example 2.11. Mapping between Sequences,"? - Detroit Tigers
   - 2001-08-12
   - 2001-08-14
 ",,,,√,√,,,,,,,,√,√,,,,,,,,,,,,,,,,√,,,,,
-M7A3,Spec Example 9.3. Bare Documents,"Bare
+"M7A3 ",Spec Example 9.3. Bare Documents,"Bare
 document
 ...
 # No document
@@ -4966,7 +4966,7 @@ document
 |
   %!PS-Adobe-2.0 # Not the first line
 ",,,,,,,,,,,,,,,,,,,,√,,,,,,,,,√,,,√,,
-M7NX,Nested flow collections,"---
+"M7NX ",Nested flow collections,"---
 {
  a: [
   b, c, {
@@ -5012,7 +5012,7 @@ a:
   - e
   - f
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-M9B4,Spec Example 8.7. Literal Scalar,"|
+"M9B4 ",Spec Example 8.7. Literal Scalar,"|
  literal
  <TAB>text
 
@@ -5027,7 +5027,7 @@ M9B4,Spec Example 8.7. Literal Scalar,"|
   literal
   <TAB>text
 ",,,√,,,,,,√,,,,,,,,,,,,,,,,,√,,,,√,,,√,,
-MJS9,Spec Example 6.7. Block Folding,">
+"MJS9 ",Spec Example 6.7. Block Folding,">
   foo<SPC>
 <SPC>
   <TAB> bar
@@ -5041,7 +5041,7 @@ MJS9,Spec Example 6.7. Block Folding,">
 ","""foo \n\n\t bar\n\nbaz\n""
 ","""foo \n\n\t bar\n\nbaz\n""
 ",,,√,,,,,,,√,,,,,,,,,,,,,,,,√,,,,√,,,√,,
-MXS3,Flow Mapping in Block Sequence,"- {a: b}
+"MXS3 ",Flow Mapping in Block Sequence,"- {a: b}
 ","+STR
 +DOC
 +SEQ
@@ -5059,7 +5059,7 @@ MXS3,Flow Mapping in Block Sequence,"- {a: b}
 ]
 ","- a: b
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-MYW6,Block Scalar Strip,"|-
+"MYW6 ",Block Scalar Strip,"|-
  ab
 <SPC>
 <SPC>
@@ -5074,7 +5074,7 @@ MYW6,Block Scalar Strip,"|-
   ab
 ...
 ",,,√,,,,,,√,,,,,,,,,,,,,,,,,√,,,,,,,√,,
-MZX3,Non-Specific Tags on Scalars,"- plain
+"MZX3 ",Non-Specific Tags on Scalars,"- plain
 - ""double quoted""
 - 'single quoted'
 - >
@@ -5099,7 +5099,7 @@ MZX3,Non-Specific Tags on Scalars,"- plain
   ""plain again""
 ]
 ",,,,√,,,,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,
-N4JP,Bad indentation in mapping,"map:
+"N4JP ",Bad indentation in mapping,"map:
   key1: ""quoted1""
  key2: ""bad indentation""
 ","+STR
@@ -5111,7 +5111,7 @@ N4JP,Bad indentation in mapping,"map:
 =VAL ""quoted1
 -MAP
 ",,,,√,,√,,,,√,,,,,,,,,,,,,,,,,,,√,,,,,,,,
-N782,Invalid document markers in flow style,"[
+"N782 ",Invalid document markers in flow style,"[
 --- ,
 ...
 ]
@@ -5119,7 +5119,7 @@ N782,Invalid document markers in flow style,"[
 +DOC
 +SEQ
 ",,,,√,,,,√,,,,,,,,,,,,,,,√,√,,,,,,,√,,,,,,
-NAT4,Various empty or newline only quoted strings,"---
+"NAT4 ",Various empty or newline only quoted strings,"---
 a: '
   '
 b: '<SPC><SPC>
@@ -5189,7 +5189,7 @@ g: '
   '
 h: ""\n\n""
 ",,√,,,,√,√,,,,,,,,,,,,,,,,,,√,,,,,,,,,
-NB6Z,Multiline plain value with tabs on empty lines,"key:
+"NB6Z ",Multiline plain value with tabs on empty lines,"key:
   value
   with
   <TAB>
@@ -5209,7 +5209,7 @@ NB6Z,Multiline plain value with tabs on empty lines,"key:
 
   tabs'
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,
-NHX8,Empty Lines at End of Document,":
+"NHX8 ",Empty Lines at End of Document,":
 
 
 ","+STR
@@ -5222,7 +5222,7 @@ NHX8,Empty Lines at End of Document,":
 -STR
 ",,,":
 ",,,,,,,,,,,√,,,,,,,,,,,,,,√,,,,,,,,,
-NJ66,Multiline plain flow mapping key,"---
+"NJ66 ",Multiline plain flow mapping key,"---
 - { single line: value}
 - { multi
   line: value}
@@ -5252,7 +5252,7 @@ NJ66,Multiline plain flow mapping key,"---
 - single line: value
 - multi line: value
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-NKF9,Empty keys in block and flow mapping,"---
+"NKF9 ",Empty keys in block and flow mapping,"---
 key: value
 : empty key
 ---
@@ -5306,7 +5306,7 @@ key: value
 ---
 :
 ",,,√,,,,,,,,√,,,,,,,,,,,,,,,,,,,,,,,
-NP9H,Spec Example 7.5. Double Quoted Line Breaks,"""folded<SPC>
+"NP9H ",Spec Example 7.5. Double Quoted Line Breaks,"""folded<SPC>
 to a space,<TAB>
 <SPC>
 to a line feed, or <TAB>\
@@ -5319,7 +5319,7 @@ to a line feed, or <TAB>\
 ","""folded to a space,\nto a line feed, or \t \tnon-content""
 ","""folded to a space,\nto a line feed, or \t \tnon-content""
 ",,,√,,,,,√,,,,,,,,,,,,,,,,,,√,,,,√,,√,,,
-P2AD,Spec Example 8.1. Block Scalar Header,"- | # Empty header↓
+"P2AD ",Spec Example 8.1. Block Scalar Header,"- | # Empty header↓
  literal
 - >1 # Indentation indicator↓
   folded
@@ -5354,7 +5354,7 @@ P2AD,Spec Example 8.1. Block Scalar Header,"- | # Empty header↓
 - >2-
    strip
 ",,,√,,,,,,√,√,,,,,,,,,,,,,,,√,,,,,√,,,,,
-P2EQ,Invalid sequene item on same line as previous item,"---
+"P2EQ ",Invalid sequene item on same line as previous item,"---
 - { y: z }- invalid
 ","+STR
 +DOC ---
@@ -5364,7 +5364,7 @@ P2EQ,Invalid sequene item on same line as previous item,"---
 =VAL :z
 -MAP
 ",,,,√,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-P76L,Spec Example 6.19. Secondary Tag Handle,"%TAG !! tag:example.com,2000:app/
+"P76L ",Spec Example 6.19. Secondary Tag Handle,"%TAG !! tag:example.com,2000:app/
 ---
 !!int 1 - 3 # Interval, not integer
 ","+STR
@@ -5375,7 +5375,7 @@ P76L,Spec Example 6.19. Secondary Tag Handle,"%TAG !! tag:example.com,2000:app/
 ","""1 - 3""
 ","--- !<tag:example.com,2000:app/int> 1 - 3
 ",,,,,,,,,,,,,,,,,,√,,√,,√,,,,,,,,√,,,,,
-P94K,Spec Example 6.11. Multi-Line Comments,"key:    # Comment
+"P94K ",Spec Example 6.11. Multi-Line Comments,"key:    # Comment
         # lines
   value
 
@@ -5393,7 +5393,7 @@ P94K,Spec Example 6.11. Multi-Line Comments,"key:    # Comment
 }
 ","key: value
 ",,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,√,,,,,
-PBJ2,Spec Example 2.3. Mapping Scalars to Sequences,"american:
+"PBJ2 ",Spec Example 2.3. Mapping Scalars to Sequences,"american:
   - Boston Red Sox
   - Detroit Tigers
   - New York Yankees
@@ -5440,7 +5440,7 @@ national:
 - Chicago Cubs
 - Atlanta Braves
 ",,,,√,√,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-PRH3,Spec Example 7.9. Single Quoted Lines,"' 1st non-empty
+"PRH3 ",Spec Example 7.9. Single Quoted Lines,"' 1st non-empty
 
  2nd non-empty<SPC>
 <TAB>3rd non-empty '
@@ -5457,7 +5457,7 @@ PRH3,Spec Example 7.9. Single Quoted Lines,"' 1st non-empty
 
   2nd non-empty 3rd non-empty '
 ",,√,,,,√,,,,,,,,,,,,,,,,,,,√,,,,√,,√,,,
-PUW8,Document start on last line,"---
+"PUW8 ",Document start on last line,"---
 a: b
 ---
 ","+STR
@@ -5480,7 +5480,7 @@ a: b
 ---
 ...
 ",,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,
-PW8X,Anchors on Empty Scalars,"- &a
+"PW8X ",Anchors on Empty Scalars,"- &a
 - a
 -
   &a : a
@@ -5526,7 +5526,7 @@ PW8X,Anchors on Empty Scalars,"- &a
 - &d :
 - &e : &a
 ",,,,,,,,,,,,,√,,,,√,,,,,,,,,,,,,,,,,,
-Q4CL,Trailing content after quoted value,"key1: ""quoted1""
+"Q4CL ",Trailing content after quoted value,"key1: ""quoted1""
 key2: ""quoted2"" trailing content
 key3: ""quoted3""
 ","+STR
@@ -5537,7 +5537,7 @@ key3: ""quoted3""
 =VAL :key2
 =VAL ""quoted2
 ",,,,√,,√,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,
-Q5MG,Tab at beginning of line followed by a flow mapping,"<TAB>{}
+"Q5MG ",Tab at beginning of line followed by a flow mapping,"<TAB>{}
 ","+STR
 +DOC
 +MAP
@@ -5547,7 +5547,7 @@ Q5MG,Tab at beginning of line followed by a flow mapping,"<TAB>{}
 ","{}
 ","{}
 ",,,,,,√,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,
-Q88A,Spec Example 7.23. Flow Content,"- [ a, b ]
+"Q88A ",Spec Example 7.23. Flow Content,"- [ a, b ]
 - { a: b }
 - ""a""
 - 'b'
@@ -5588,7 +5588,7 @@ Q88A,Spec Example 7.23. Flow Content,"- [ a, b ]
 - 'b'
 - c
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-Q8AD,Spec Example 7.5. Double Quoted Line Breaks [1.3],"---
+"Q8AD ",Spec Example 7.5. Double Quoted Line Breaks [1.3],"---
 ""folded<SPC>
 to a space,
 <SPC>
@@ -5603,7 +5603,7 @@ to a line feed, or <TAB>\
 ","""folded to a space,\nto a line feed, or \t \tnon-content""
 ","--- ""folded to a space,\nto a line feed, or \t \tnon-content""
 ",,√,,,,,√,,,,,,,,,,,,,,,,,,√,,,,√,,,,√,
-Q9WF,Spec Example 6.12. Separation Spaces,"{ first: Sammy, last: Sosa }:
+"Q9WF ",Spec Example 6.12. Separation Spaces,"{ first: Sammy, last: Sosa }:
 # Statistics:
   hr:  # Home runs
      65
@@ -5632,7 +5632,7 @@ Q9WF,Spec Example 6.12. Separation Spaces,"{ first: Sammy, last: Sosa }:
 : hr: 65
   avg: 0.278
 ",,,,,,√,,,,,,,,√,,,,,,,,,,,√,√,,,,√,,,√,,
-QB6E,Wrong indented multiline quoted scalar,"---
+"QB6E ",Wrong indented multiline quoted scalar,"---
 quoted: ""a
 b
 c""
@@ -5641,7 +5641,7 @@ c""
 +MAP
 =VAL :quoted
 ",,,,√,,,,,,√,,,,,,,,,,,,,,,,,,,√,,,,,,,,
-QF4Y,Spec Example 7.19. Single Pair Flow Mappings,"[
+"QF4Y ",Spec Example 7.19. Single Pair Flow Mappings,"[
 foo: bar
 ]
 ","+STR
@@ -5661,7 +5661,7 @@ foo: bar
 ]
 ","- foo: bar
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-QLJ7,Tag shorthand used in documents but only defined in the first,"%TAG !prefix! tag:example.com,2011:
+"QLJ7 ",Tag shorthand used in documents but only defined in the first,"%TAG !prefix! tag:example.com,2011:
 --- !prefix!A
 a: b
 --- !prefix!B
@@ -5677,12 +5677,12 @@ e: f
 -DOC
 +DOC ---
 ",,,,√,,,,,,,,,,,,,,,,√,,,,,√,,,,,,,,,,,,
-QT73,Comment and document-end marker,"# comment
+"QT73 ",Comment and document-end marker,"# comment
 ...
 ","+STR
 -STR
 ",,,,,,,,,,,,,,,,,,,,,,,√,,,,√,,,,,,,,,,
-R4YG,Spec Example 8.2. Block Indentation Indicator,"- |
+"R4YG ",Spec Example 8.2. Block Indentation Indicator,"- |
  detected
 - >
 <SPC>
@@ -5719,7 +5719,7 @@ R4YG,Spec Example 8.2. Block Indentation Indicator,"- |
    explicit
 - ""\t\ndetected\n""
 ",,,√,,,,,,√,√,,,,,,,,,,,,,,,,√,,,,√,,√,,,√
-R52L,Nested flow mapping sequence and mappings,"---
+"R52L ",Nested flow mapping sequence and mappings,"---
 { top1: [item1, {key2: value2}, item3], top2: value2 }
 ","+STR
 +DOC ---
@@ -5755,7 +5755,7 @@ top1:
 - item3
 top2: value2
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-RHX7,YAML directive without document end marker,"---
+"RHX7 ",YAML directive without document end marker,"---
 key: value
 %YAML 1.2
 ---
@@ -5765,7 +5765,7 @@ key: value
 =VAL :key
 =VAL :value
 ",,,,√,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,
-RLU9,Sequence Indent,"foo:
+"RLU9 ",Sequence Indent,"foo:
 - 42
 bar:
   - 44
@@ -5796,7 +5796,7 @@ bar:
 bar:
 - 44
 ",,,,,√,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,
-RR7F,Mixed Block Mapping (implicit to explicit),"a: 4.2
+"RR7F ",Mixed Block Mapping (implicit to explicit),"a: 4.2
 ? d
 : 23
 ","+STR
@@ -5816,7 +5816,7 @@ RR7F,Mixed Block Mapping (implicit to explicit),"a: 4.2
 ","a: 4.2
 d: 23
 ",,,,√,,,,,,,,,√,,,,,,,,,,,,,,,,,,,,,,
-RTP8,Spec Example 9.2. Document Markers,"%YAML 1.2
+"RTP8 ",Spec Example 9.2. Document Markers,"%YAML 1.2
 ---
 Document
 ... # Suffix
@@ -5829,14 +5829,14 @@ Document
 ","--- Document
 ...
 ",,,,,,,,,,,,,,,,,,,,,√,√,,,,,,,,√,,,,,
-RXY3,Invalid document-end marker in single quoted string,"---
+"RXY3 ",Invalid document-end marker in single quoted string,"---
 '
 ...
 '
 ","+STR
 +DOC ---
 ",,,,√,,,,,√,,,,,,,,,,,,,,√,,,,,,,,,,,,,,
-RZP5,Various Trailing Comments [1.3],"a: ""double
+"RZP5 ",Various Trailing Comments [1.3],"a: ""double
   quotes"" # lala
 b: plain
  value  # lala
@@ -5888,7 +5888,7 @@ e: &node
 block: >
   abcde
 ",,,,√,,,,,,√,,,,,,,√,,,,,,,,√,,,,,,,,,√,
-RZT7,Spec Example 2.28. Log File,"---
+"RZT7 ",Spec Example 2.28. Log File,"---
 Time: 2001-11-23 15:01:42 -5
 User: ed
 Warning:
@@ -6014,7 +6014,7 @@ Stack:
   code: |-
     foo = bar
 ",,,,√,√,,,,√,,,,,,,,,,,,,√,,,,,,,,√,,,,,
-S3PD,Spec Example 8.18. Implicit Block Mapping Entries,"plain key: in-line value
+"S3PD ",Spec Example 8.18. Implicit Block Mapping Entries,"plain key: in-line value
 : # Both empty
 ""quoted key"":
 - entry
@@ -6037,7 +6037,7 @@ S3PD,Spec Example 8.18. Implicit Block Mapping Entries,"plain key: in-line value
 ""quoted key"":
 - entry
 ",,,√,,,,,,,,√,,,,,,,,,,,,,,,,,,√,,,,,
-S4GJ,Invalid text after block scalar indicator,"---
+"S4GJ ",Invalid text after block scalar indicator,"---
 folded: > first line
   second line
 ","+STR
@@ -6045,7 +6045,7 @@ folded: > first line
 +MAP
 =VAL :folded
 ",,,,√,,,,,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,
-S4JQ,Spec Example 6.28. Non-Specific Tags,"# Assuming conventional resolution:
+"S4JQ ",Spec Example 6.28. Non-Specific Tags,"# Assuming conventional resolution:
 - ""12""
 - 12
 - ! 12
@@ -6067,7 +6067,7 @@ S4JQ,Spec Example 6.28. Non-Specific Tags,"# Assuming conventional resolution:
 - 12
 - ! 12
 ",,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,√,,,,,
-S4T7,Document with footer,"aaa: bbb
+"S4T7 ",Document with footer,"aaa: bbb
 ...
 ","+STR
 +DOC
@@ -6081,7 +6081,7 @@ S4T7,Document with footer,"aaa: bbb
   ""aaa"": ""bbb""
 }
 ",,,,,√,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,
-S7BG,Colon followed by comma,"---
+"S7BG ",Colon followed by comma,"---
 - :,
 ","+STR
 +DOC ---
@@ -6096,7 +6096,7 @@ S7BG,Colon followed by comma,"---
 ","---
 - :,
 ",,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-S98Z,Block scalar with more spaces than first content line,"empty block scalar: >
+"S98Z ",Block scalar with more spaces than first content line,"empty block scalar: >
 <SPC>
 <SPC><SPC>
 <SPC><SPC><SPC>
@@ -6106,7 +6106,7 @@ S98Z,Block scalar with more spaces than first content line,"empty block scalar: 
 +MAP
 =VAL :empty block scalar
 ",,,,√,√,,,,,,,√,,,,,,,,,,,,,,,√,√,,,,,,,,,
-S9E8,Spec Example 5.3. Block Structure Indicators,"sequence:
+"S9E8 ",Spec Example 5.3. Block Structure Indicators,"sequence:
 - one
 - two
 mapping:
@@ -6148,7 +6148,7 @@ mapping:
   sky: blue
   sea: green
 ",,,,√,√,,,,,,,,√,,,,,,,,,,,,,,,,,√,,,,,
-SBG9,Flow Sequence in Flow Mapping,"{a: [b, c], [d, e]: f}
+"SBG9 ",Flow Sequence in Flow Mapping,"{a: [b, c], [d, e]: f}
 ","+STR
 +DOC
 +MAP
@@ -6172,12 +6172,12 @@ SBG9,Flow Sequence in Flow Mapping,"{a: [b, c], [d, e]: f}
   - e
 : f
 ",,,,√,√,√,,,,,,,,√,,,,,,,,,,,,,,,,,,,,,
-SF5V,Duplicate YAML directive,"%YAML 1.2
+"SF5V ",Duplicate YAML directive,"%YAML 1.2
 %YAML 1.2
 ---
 ","+STR
 ",,,,√,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,
-SKE5,Anchor before zero indented sequence,"---
+"SKE5 ",Anchor before zero indented sequence,"---
 seq:
  &anchor
 - a
@@ -6204,7 +6204,7 @@ seq: &anchor
 - a
 - b
 ",,,,,√,,,,,,,,,,,,√,,,,,,,,,,√,,,,,,,,
-SR86,Anchor plus Alias,"key1: &a value
+"SR86 ",Anchor plus Alias,"key1: &a value
 key2: &b *a
 ","+STR
 +DOC
@@ -6213,7 +6213,7 @@ key2: &b *a
 =VAL &a :value
 =VAL :key2
 ",,,,√,,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,,,
-SSW6,Spec Example 7.7. Single Quoted Characters [1.3],"---
+"SSW6 ",Spec Example 7.7. Single Quoted Characters [1.3],"---
 'here''s to ""quotes""'
 ","+STR
 +DOC ---
@@ -6223,14 +6223,14 @@ SSW6,Spec Example 7.7. Single Quoted Characters [1.3],"---
 ","""here's to \""quotes\""""
 ","--- 'here''s to ""quotes""'
 ",,,√,,,,√,,,,,,,,,,,,,,,,,,,,,,,√,,,,√,
-SU5Z,Comment without whitespace after doublequoted scalar,"key: ""value""# invalid comment
+"SU5Z ",Comment without whitespace after doublequoted scalar,"key: ""value""# invalid comment
 ","+STR
 +DOC
 +MAP
 =VAL :key
 =VAL ""value
 ",,,,√,,,,,,√,,,,,,,,,,,,,,,,,√,√,,,,,,,,,
-SU74,Anchor and alias as mapping key,"key1: &alias value1
+"SU74 ",Anchor and alias as mapping key,"key1: &alias value1
 &b *alias : value2
 ","+STR
 +DOC
@@ -6238,10 +6238,10 @@ SU74,Anchor and alias as mapping key,"key1: &alias value1
 =VAL :key1
 =VAL &alias :value1
 ",,,,√,,√,,,,,,,,,,,,√,√,,,,,,,,,,,,,,,,,,
-SY6V,Anchor before sequence entry on same line,"&anchor - sequence entry
+"SY6V ",Anchor before sequence entry on same line,"&anchor - sequence entry
 ","+STR
 ",,,,√,,,√,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,,
-SYW4,Spec Example 2.2. Mapping Scalars to Scalars,"hr:  65    # Home runs
+"SYW4 ",Spec Example 2.2. Mapping Scalars to Scalars,"hr:  65    # Home runs
 avg: 0.278 # Batting average
 rbi: 147   # Runs Batted In
 ","+STR
@@ -6265,7 +6265,7 @@ rbi: 147   # Runs Batted In
 avg: 0.278
 rbi: 147
 ",,,√,,,,,,,,,,,,,,,,,,,,,,√,,,,,√,,,,,
-T26H,Spec Example 8.8. Literal Content [1.3],"--- |
+"T26H ",Spec Example 8.8. Literal Content [1.3],"--- |
 <SPC>
 <SPC><SPC>
   literal
@@ -6289,7 +6289,7 @@ T26H,Spec Example 8.8. Literal Content [1.3],"--- |
 
   text
 ",,√,,,,,,√,,,,,,,,,,,,,,,,√,√,,,,√,,,,√,
-T4YY,Spec Example 7.9. Single Quoted Lines [1.3],"---
+"T4YY ",Spec Example 7.9. Single Quoted Lines [1.3],"---
 ' 1st non-empty
 
  2nd non-empty<SPC>
@@ -6307,7 +6307,7 @@ T4YY,Spec Example 7.9. Single Quoted Lines [1.3],"---
 
   2nd non-empty 3rd non-empty '
 ",,√,,,,√,,,,,,,,,,,,,,,,,,,√,,,,√,,,,√,
-T5N4,Spec Example 8.7. Literal Scalar [1.3],"--- |
+"T5N4 ",Spec Example 8.7. Literal Scalar [1.3],"--- |
  literal
  <TAB>text
 
@@ -6323,7 +6323,7 @@ T5N4,Spec Example 8.7. Literal Scalar [1.3],"--- |
   literal
   <TAB>text
 ",,√,,,,,,√,,,,,,,,,,,,,,,,,√,,,,√,,,,√,
-T833,Flow mapping missing a separating comma,"---
+"T833 ",Flow mapping missing a separating comma,"---
 {
  foo: 1
  bar: 2 }
@@ -6332,7 +6332,7 @@ T833,Flow mapping missing a separating comma,"---
 +MAP
 =VAL :foo
 ",,,,√,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-TD5N,Invalid scalar after sequence,"- item1
+"TD5N ",Invalid scalar after sequence,"- item1
 - item2
 invalid
 ","+STR
@@ -6341,7 +6341,7 @@ invalid
 =VAL :item1
 =VAL :item2
 ",,,,√,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-TE2A,Spec Example 8.16. Block Mappings,"block mapping:
+"TE2A ",Spec Example 8.16. Block Mappings,"block mapping:
  key: value
 ","+STR
 +DOC
@@ -6362,7 +6362,7 @@ TE2A,Spec Example 8.16. Block Mappings,"block mapping:
 ","block mapping:
   key: value
 ",,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-TL85,Spec Example 6.8. Flow Folding,"""
+"TL85 ",Spec Example 6.8. Flow Folding,"""
   foo<SPC>
 <SPC>
   <TAB> bar
@@ -6377,7 +6377,7 @@ TL85,Spec Example 6.8. Flow Folding,"""
 ",""" foo\nbar\nbaz ""
 ",""" foo\nbar\nbaz ""
 ",,,√,,,,,√,,,,,,,,,,,,,,,,,,√,,,,√,,√,,,
-TS54,Folded Block Scalar,">
+"TS54 ",Folded Block Scalar,">
  ab
  cd
 <SPC>
@@ -6399,7 +6399,7 @@ TS54,Folded Block Scalar,">
 
   gh
 ",,,√,,,,,,,√,,,,,,,,,,,,,,,,,,,,,,,√,,
-U3C3,Spec Example 6.16. “TAG” directive,"%TAG !yaml! tag:yaml.org,2002:
+"U3C3 ",Spec Example 6.16. “TAG” directive,"%TAG !yaml! tag:yaml.org,2002:
 ---
 !yaml!str ""foo""
 ","+STR
@@ -6410,7 +6410,7 @@ U3C3,Spec Example 6.16. “TAG” directive,"%TAG !yaml! tag:yaml.org,2002:
 ","""foo""
 ","--- !!str ""foo""
 ",,,,,,,,,,,,,,,,,,√,,,,√,,,,,,,,√,,,,,
-U3XV,Node and Mapping Key Anchors,"---
+"U3XV ",Node and Mapping Key Anchors,"---
 top1: &node1
   &k1 key1: one
 top2: &node2 # comment
@@ -6495,7 +6495,7 @@ top5: &node5
 top6: &val6 six
 top7: &val7 seven
 ",,,,,,,,,,,,,,,,,√,,,,,,,,√,,,,,,,,√,,
-U44R,Bad indentation in mapping (2),"map:
+"U44R ",Bad indentation in mapping (2),"map:
   key1: ""quoted1""
    key2: ""bad indentation""
 ","+STR
@@ -6506,12 +6506,12 @@ U44R,Bad indentation in mapping (2),"map:
 =VAL :key1
 =VAL ""quoted1
 ",,,,√,,√,,,,√,,,,,,,,,,,,,,,,,,,√,,,,,,,,
-U99R,Invalid comma in tag,"- !!str, xxx
+"U99R ",Invalid comma in tag,"- !!str, xxx
 ","+STR
 +DOC
 +SEQ
 ",,,,√,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,
-U9NS,Spec Example 2.8. Play by Play Feed from a Game,"---
+"U9NS ",Spec Example 2.8. Play by Play Feed from a Game,"---
 time: 20:03:20
 player: Sammy Sosa
 action: strike (miss)
@@ -6554,7 +6554,7 @@ action: grand slam
   ""action"": ""grand slam""
 }
 ",,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,√,,,,,
-UDM2,Plain URL in flow mapping,"- { url: http://example.org }
+"UDM2 ",Plain URL in flow mapping,"- { url: http://example.org }
 ","+STR
 +DOC
 +SEQ
@@ -6572,7 +6572,7 @@ UDM2,Plain URL in flow mapping,"- { url: http://example.org }
 ]
 ","- url: http://example.org
 ",,,√,,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-UDR7,Spec Example 5.4. Flow Collection Indicators,"sequence: [ one, two, ]
+"UDR7 ",Spec Example 5.4. Flow Collection Indicators,"sequence: [ one, two, ]
 mapping: { sky: blue, sea: green }
 ","+STR
 +DOC
@@ -6609,7 +6609,7 @@ mapping:
   sky: blue
   sea: green
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-UGM3,Spec Example 2.27. Invoice,"--- !<tag:clarkevans.com,2002:invoice>
+"UGM3 ",Spec Example 2.27. Invoice,"--- !<tag:clarkevans.com,2002:invoice>
 invoice: 34843
 date   : 2001-01-23
 bill-to: &id001
@@ -6765,7 +6765,7 @@ tax: 251.42
 total: 4443.52
 comments: Late afternoon is best. Backup contact is Nancy Billsmer @ 338-4338.
 ",,,,√,√,,,,√,,,,,,,√,,√,,√,,,,,,,,,,√,,,,,
-UT92,Spec Example 9.4. Explicit Documents,"---
+"UT92 ",Spec Example 9.4. Explicit Documents,"---
 { matches
 % : 20 }
 ...
@@ -6793,7 +6793,7 @@ matches %: 20
 ---
 ...
 ",,,,,,√,,,,,,,,,,,,,,,√,√,,,√,,,,,√,,,,,
-V55R,Aliases in Block Sequence,"- &a a
+"V55R ",Aliases in Block Sequence,"- &a a
 - &b b
 - *a
 - *b
@@ -6814,7 +6814,7 @@ V55R,Aliases in Block Sequence,"- &a a
   ""b""
 ]
 ",,,,,,√,,,,,,,,,,,√,,,,,,,,,,,,,,,,,,,
-V9D5,Spec Example 8.19. Compact Block Mappings,"- sun: yellow
+"V9D5 ",Spec Example 8.19. Compact Block Mappings,"- sun: yellow
 - ? earth: blue
   : moon: white
 ","+STR
@@ -6838,7 +6838,7 @@ V9D5,Spec Example 8.19. Compact Block Mappings,"- sun: yellow
 -DOC
 -STR
 ",,,,,,√,,,,,,,,,√,√,,,,,,,,,,,,,,,,√,,,,,
-W42U,Spec Example 8.15. Block Sequence Entry Types,"- # Empty
+"W42U ",Spec Example 8.15. Block Sequence Entry Types,"- # Empty
 - |
  block node
 - - one # Compact
@@ -6878,7 +6878,7 @@ W42U,Spec Example 8.15. Block Sequence Entry Types,"- # Empty
   - two
 - one: two
 ",,,,,√,,,,√,,,,,,,,,,,,,,,,√,,,,,√,,,,,
-W4TN,Spec Example 9.5. Directives Documents,"%YAML 1.2
+"W4TN ",Spec Example 9.5. Directives Documents,"%YAML 1.2
 --- |
 %!PS-Adobe-2.0
 ...
@@ -6902,7 +6902,7 @@ null
 ---
 ...
 ",,,,,,,,,,,,,,,,,,,,,√,√,,,,,,,,√,,,√,,
-W5VH,Allowed characters in alias,"a: &:@*!$""<foo>: scalar a
+"W5VH ",Allowed characters in alias,"a: &:@*!$""<foo>: scalar a
 b: *:@*!$""<foo>:
 ","+STR
 +DOC
@@ -6919,7 +6919,7 @@ b: *:@*!$""<foo>:
   ""b"": ""scalar a""
 }
 ",,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,√,,
-W9L4,Literal block scalar with more spaces in first line,"---
+"W9L4 ",Literal block scalar with more spaces in first line,"---
 block scalar: |
 <SPC><SPC><SPC><SPC><SPC>
   more spaces at the beginning
@@ -6929,7 +6929,7 @@ block scalar: |
 +MAP
 =VAL :block scalar
 ",,,,√,,,,,,,√,,,,,,,,,,,,,,,,,√,,,,,,,,,
-WZ62,Spec Example 7.2. Empty Content,"{
+"WZ62 ",Spec Example 7.2. Empty Content,"{
   foo : !!str,
   !!str : bar,
 }
@@ -6950,7 +6950,7 @@ WZ62,Spec Example 7.2. Empty Content,"{
 ","foo: !!str
 !!str : bar
 ",,,√,,,√,,,,,,,,,,,,√,,,,,,,,,,,,√,,,,,
-X38W,Aliases in Flow Objects,"{ &a [a, &b b]: *b, *a : [c, *b, d]}
+"X38W ",Aliases in Flow Objects,"{ &a [a, &b b]: *b, *a : [c, *b, d]}
 ","+STR
 +DOC
 +MAP
@@ -6977,14 +6977,14 @@ X38W,Aliases in Flow Objects,"{ &a [a, &b b]: *b, *a : [c, *b, d]}
 - *b
 - d
 ",,,,,,√,,,,,,,,√,,√,,,,,,,,,,,,,,,,,,,
-X4QW,Comment without whitespace after block scalar indicator,"block: ># comment
+"X4QW ",Comment without whitespace after block scalar indicator,"block: ># comment
   scalar
 ","+STR
 +DOC
 +MAP
 =VAL :block
 ",,,,√,,,,,,,,√,,,,,,,,,,,,,,,√,√,,,,,,,,,
-X8DW,Explicit key and value seperated by comment,"---
+"X8DW ",Explicit key and value seperated by comment,"---
 ? key
 # comment
 : value
@@ -7002,7 +7002,7 @@ X8DW,Explicit key and value seperated by comment,"---
 ","---
 key: value
 ",,,,√,,,,,,,,,√,,,,,,,,,,,,√,,,,,,,,,,
-XLQ9,Multiline scalar that looks like a YAML directive,"---
+"XLQ9 ",Multiline scalar that looks like a YAML directive,"---
 scalar
 %YAML 1.2
 ","+STR
@@ -7014,7 +7014,7 @@ scalar
 ","--- scalar %YAML 1.2
 ...
 ",,,√,,,,,,,,,,,,,,,,,,,,√,,,,,,,,,,,,
-XV9V,Spec Example 6.5. Empty Lines [1.3],"Folding:
+"XV9V ",Spec Example 6.5. Empty Lines [1.3],"Folding:
   ""Empty line
 
   as a line feed""
@@ -7040,7 +7040,7 @@ Chomping: |
 Chomping: |
   Clipped empty lines
 ",,,√,,,,,,√,,,,,,,,,,,,,,,,,,,,,√,,,,√,
-XW4D,Various Trailing Comments,"a: ""double
+"XW4D ",Various Trailing Comments,"a: ""double
   quotes"" # lala
 b: plain
  value  # lala
@@ -7093,7 +7093,7 @@ e: &node
 block: >
   abcde
 ",,,,,,,,,,√,,,√,,,,,,,,,,,,√,,,,,,,,√,,
-Y2GN,Anchor with colon in the middle,"---
+"Y2GN ",Anchor with colon in the middle,"---
 key: &an:chor value
 ","+STR
 +DOC ---
@@ -7109,7 +7109,7 @@ key: &an:chor value
 ","---
 key: &an:chor value
 ",,,,,,,,,,,,,,,,,√,,,,,,,,,,,,,,,,,,
-YD5X,Spec Example 2.5. Sequence of Sequences,"- [name        , hr, avg  ]
+"YD5X ",Spec Example 2.5. Sequence of Sequences,"- [name        , hr, avg  ]
 - [Mark McGwire, 65, 0.278]
 - [Sammy Sosa  , 63, 0.288]
 ","+STR
@@ -7160,7 +7160,7 @@ YD5X,Spec Example 2.5. Sequence of Sequences,"- [name        , hr, avg  ]
   - 63
   - 0.288
 ",,,,,√,,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-Z67P,Spec Example 8.21. Block Scalar Nodes [1.3],"literal: |2
+"Z67P ",Spec Example 8.21. Block Scalar Nodes [1.3],"literal: |2
   value
 folded: !foo >1
  value
@@ -7183,7 +7183,7 @@ folded: !foo >1
 folded: !foo >
   value
 ",,,,,,,,,√,√,,,,,,,,√,√,,,,,,,,√,,,√,,,,√,
-Z9M4,Spec Example 6.22. Global Tag Prefix,"%TAG !e! tag:example.com,2000:app/
+"Z9M4 ",Spec Example 6.22. Global Tag Prefix,"%TAG !e! tag:example.com,2000:app/
 ---
 - !e!foo ""bar""
 ","+STR
@@ -7199,13 +7199,13 @@ Z9M4,Spec Example 6.22. Global Tag Prefix,"%TAG !e! tag:example.com,2000:app/
 ","---
 - !<tag:example.com,2000:app/foo> ""bar""
 ",,,,,,,,,,,,,,,,,,√,,√,,√,,,,,,,,√,,,,,
-ZCZ6,Invalid mapping in plain single line value,"a: b: c: d
+"ZCZ6 ",Invalid mapping in plain single line value,"a: b: c: d
 ","+STR
 +DOC
 +MAP
 =VAL :a
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-ZF4X,Spec Example 2.6. Mapping of Mappings,"Mark McGwire: {hr: 65, avg: 0.278}
+"ZF4X ",Spec Example 2.6. Mapping of Mappings,"Mark McGwire: {hr: 65, avg: 0.278}
 Sammy Sosa: {
     hr: 63,
     avg: 0.288
@@ -7247,7 +7247,7 @@ Sammy Sosa:
   hr: 63
   avg: 0.288
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,√,,,,,
-ZH7C,Anchors in Mapping,"&a a: b
+"ZH7C ",Anchors in Mapping,"&a a: b
 c: &d d
 ","+STR
 +DOC
@@ -7264,7 +7264,7 @@ c: &d d
   ""c"": ""d""
 }
 ",,,,,√,,,,,,,,,,,,,√,,,,,,,,,,,,,,√,,,,
-ZK9H,Nested top level flow mapping,"{ key: [[[
+"ZK9H ",Nested top level flow mapping,"{ key: [[[
   value
  ]]]
 }
@@ -7294,7 +7294,7 @@ ZK9H,Nested top level flow mapping,"{ key: [[[
 ","key:
 - - - value
 ",,,,√,√,√,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,
-ZL4Z,Invalid nested mapping,"---
+"ZL4Z ",Invalid nested mapping,"---
 a: 'b': c
 ","+STR
 +DOC ---
@@ -7302,7 +7302,7 @@ a: 'b': c
 =VAL :a
 =VAL 'b
 ",,,,√,,√,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
-ZVH3,Wrong indented sequence item,"- key: value
+"ZVH3 ",Wrong indented sequence item,"- key: value
  - item1
 ","+STR
 +DOC
@@ -7312,7 +7312,7 @@ ZVH3,Wrong indented sequence item,"- key: value
 =VAL :value
 -MAP
 ",,,,√,,,√,,,,,,,,,,,,,,,,,,,,,,√,,,,,,,,
-ZWK4,Key with anchor after missing explicit mapping value,"---
+"ZWK4 ",Key with anchor after missing explicit mapping value,"---
 a: 1
 ? b
 &anchor c: 3
@@ -7338,7 +7338,7 @@ a: 1
 b:
 &anchor c: 3
 ",,,,√,,,,,,,,,√,,,,√,,,,,,,,,,,,,,,,,,
-ZXT5,Implicit key followed by newline and adjacent value,"[ ""key""
+"ZXT5 ",Implicit key followed by newline and adjacent value,"[ ""key""
   :value ]
 ","+STR
 +DOC

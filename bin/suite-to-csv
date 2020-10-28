@@ -66,6 +66,7 @@ add = (o)->
   r = {}
   for k in order
     r[k] = o[k]
+  r.id = "#{r.id} "
   rows.push r
 
 suite_to_data files, add
