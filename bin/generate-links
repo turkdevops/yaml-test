@@ -1,6 +1,6 @@
 #!/usr/bin/env coffee
 
-require './generate'
+require './prelude'
 
 mkdir "test/name"
 mkdir "test/tags"

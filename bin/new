@@ -6,6 +6,11 @@ while true; do
   [[ -e "$file" ]] || break
 done
 
+if [[ $1 == --id ]]; then
+  echo $id
+  exit
+fi
+
 # may give a command line param to copy an existing file
 if [ $# -eq 1 ]; then
   if [ ! -f "test/${1}.tml" ]; then

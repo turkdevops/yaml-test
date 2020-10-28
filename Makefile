@@ -1,6 +1,7 @@
 export PATH := $(PWD)/node_modules/.bin:$(PATH)
 
 MATRIX_REPO ?= git@github.com:perlpunk/yaml-test-matrix
+SUITE_CSV := share/yaml-test-suite.csv
 
 default: help
 
@@ -11,6 +12,8 @@ update: doc node_modules
 	rm -fr test/name/ test/tags/
 	bin/generate-links test/*.tml
 	git add -A -f test/
+
+update-all: update data-update $(SUITE_CSV)
 
 .PHONY: doc
 doc: ReadMe.pod
@@ -41,10 +44,15 @@ data-push:
 	    git push origin data; \
 	}
 
+# TODO put node_modules in a branch
 node_modules:
 	mkdir $@
-	npm install coffeescript js-yaml jyj lodash testml-compiler
+	npm install coffeescript js-yaml jyj lodash papaparse testml-compiler
 	rm -f package*
+
+#------------------------------------------------------------------------------
+$(SUITE_CSV): test/*.tml
+	./bin/suite-to-csv $^ > $@
 
 #------------------------------------------------------------------------------
 matrix:

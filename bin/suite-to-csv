@@ -1,0 +1,77 @@
+#!/usr/bin/env coffee
+
+require './prelude'
+require './data'
+csv = require 'papaparse'
+
+files = process.argv[2..]
+
+rows = []
+
+order = [
+  'id',
+  'label',
+
+  'in-yaml',
+  'test-event',
+  'in-json',
+  'out-yaml',
+  'emit-yaml',
+
+  'error',
+
+  'scalar',
+  'mapping',
+  'sequence',
+  'flow',
+
+  'single',
+  'double',
+  'literal',
+  'folded',
+  'empty',
+
+  'empty-key',
+  'explicit-key',
+  'complex-key',
+  'duplicate-key',
+
+  'alias',
+  'anchor',
+  'tag',
+  'local-tag',
+  'unknown-tag',
+
+  'footer',
+  'header',
+  'directive',
+  'document',
+
+  'comment',
+  'whitespace',
+  'indent',
+
+  'simple',
+  'edge',
+
+  'spec',
+  'jayt',
+  'upto-1.2',
+  '1.3-err',
+  '1.3-mod',
+  'libyaml-err',
+]
+
+add = (o)->
+  r = {}
+  for k in order
+    r[k] = o[k]
+  rows.push r
+
+suite_to_data files, add
+
+print csv.unparse \
+  rows,
+  header: true
+
+# vim: sw=2:
