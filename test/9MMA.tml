@@ -1,0 +1,11 @@
+=== Directive by itself with no document
+--- from: @ingydotnet
+--- tags: error directive
+
+--- in-yaml(<)
+    %YAML 1.2
+
+--- error
+
+--- test-event
++STR
