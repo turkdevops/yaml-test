@@ -1,73 +1,82 @@
 SHELL := bash
 
-export PATH := $(PWD)/node_modules/.bin:$(PATH)
+export ROOT := $(shell pwd)
 
+export PATH := $(ROOT)/bin:$(PATH)
+
+BPAN := .bpan
+COMMON := ../yaml-common
 MATRIX_REPO ?= git@github.com:perlpunk/yaml-test-matrix
 
-DOCKER_IMAGE := yaml-test-suite-builder
+ifneq (,$(DOCKER))
+  export RUN_OR_DOCKER := $(DOCKER)
+endif
 
-default: help
+default:
 
-help:
-	@grep -E '^[-a-zA-Z0-9]+:' Makefile | cut -d: -f1
+test:
+	! $$(git rev-parse --is-shallow-repository) || \
+	    git fetch --unshallow
+	make data
+	make clean
+	make data-update
+	make data-diff
+	make data-status
+	make clean
+	make gh-pages
+	make clean
 
-update: doc node_modules
-	rm -fr test/name/ test/tags/
-	bin/generate-links test/*.tml
-	git add -A -f test/
+new-test:
+	new-test-file
 
-.PHONY: doc
-doc: ReadMe.pod
-
-ReadMe.pod: doc/yaml-test-suite.swim
-	swim --to=pod --complete --wrap < $< > $@
-
-#------------------------------------------------------------------------------
 data:
 	git branch --track $@ origin/$@ 2>/dev/null || true
 	git worktree add -f $@ $@
 
-data-update: data node_modules
-	rm -fr data/*
-	bin/generate-data test/*.tml
+data-update: data
+	rm -fr $</*
+	yaml-to-data src/*.yaml
+	data-symlinks $<
 
-data-status:
-	@(cd data; git add -Af .; git status --short)
+data-status: data
+	@git -C $< add -Af . && \
+	 git -C $< status --short
 
-data-diff:
-	@(cd data; git add -Af .; git diff --cached)
+data-diff: data
+	@git -C $< add -Af . && \
+	 git -C $< diff --cached
 
-data-push:
-	@[ -z "$$(cd data; git status --short)" ] || { \
-	    cd data; \
-	    git add -Af .; \
-	    COMMIT=`cd ..; git rev-parse --short HEAD` ; \
-	    git commit -m "Regenerated data from master $$COMMIT"; \
-	    git push origin data; \
-	}
+data-push: data
+	[[ $$(git -C $< status --short) ]] && \
+	( \
+	    git -C $< add -Af . && \
+	    COMMIT=$$(git rev-parse --short HEAD) && \
+	    git -C $< commit -m "Regenerated data from master $$COMMIT" && \
+	    git -C $< push origin data \
+	)
 
-node_modules:
-	mkdir $@
-	npm install coffeescript js-yaml jyj lodash testml-compiler
-	rm -f package*
+common:
+	cp $(COMMON)/bpan/run-or-docker.bash $(BPAN)/
 
-docker-data: docker-build
-	docker run --rm \
-	    --user "$$(id -u):$$(id -g)" \
-	    --volume $(PWD):/build \
-	    --workdir /build \
-	    $(DOCKER_IMAGE) \
-		make clean update data-update
+clean:
+	rm -fr data matrix gh-pages
+	git worktree prune
 
-docker-build: Dockerfile
-	docker build -t $(DOCKER_IMAGE) .
+docker-push-y2d:
+	RUN_OR_DOCKER_PUSH=true yaml-to-data
+
+clean-docker:
+	-docker images | \
+	    grep -E '(yaml-to-data|new-test-file)' | \
+	    awk '{print $3}' | \
+	    xargs docker rmi 2>/dev/null
 
 #------------------------------------------------------------------------------
 matrix:
 	git clone $(MATRIX_REPO) $@
 
-matrix-build: matrix
-	make -C $< $(@:matrix-%=%)
+matrix-build: matrix data
+	make -C $< build
 
 matrix-push: matrix-copy
 	( \
@@ -77,18 +86,15 @@ matrix-push: matrix-copy
 	    git push \
 	)
 
-matrix-status:
-	( \
-	    cd gh-pages && \
-	    git status \
-	)
+matrix-status: gh-pages
+	git -C $< status
 
 matrix-copy: gh-pages
-	rm -fr gh-pages/css \
-	       gh-pages/js \
-	       gh-pages/*.html \
-	       gh-pages/details \
-	       gh-pages/sheet
+	rm -fr $</css \
+	       $</js \
+	       $</*.html \
+	       $</details \
+	       $</sheet
 	cp -r matrix/matrix/html/css \
 	      matrix/matrix/html/js \
 	      matrix/matrix/html/details \
@@ -99,14 +105,3 @@ matrix-copy: gh-pages
 gh-pages:
 	git branch --track $@ origin/$@ 2>/dev/null || true
 	git worktree add $@ $@
-
-#------------------------------------------------------------------------------
-clean:
-	rm -fr data matrix gh-pages
-	rm -fr node_modules
-	rm -f package*
-	git worktree prune
-
-.PHONY: test
-test:
-	@echo "We don't run tests here."
